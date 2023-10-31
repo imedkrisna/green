@@ -1,0 +1,125 @@
+---
+title: "green_paper"
+author: "Krisna Gupta"
+abstract: "awokawokawo"
+jupyter: python3
+format: 
+  pdf:
+    toc: false
+    number-sections: true
+    colorlinks: true
+    documentclass: scrartcl
+    papersize: a4
+  html: 
+    code-fold: true
+  docx:
+    toc: false
+    number-sections: true
+---
+
+## Introduction
+
+Some shit from @SEBK17 and @HDZ17 on calculation of cap n trade.
+
+## Literature Review
+
+kwoakoawkoakwokawo
+
+## Method
+
+Let $Q$ be a quantity produced by the Indonesian economy which is nested with a leontief production function with energy. That is, $Q=\min \{F(.),\Omega\}$, where $F$ is a combination of factors such as capital and labour. Let $\Omega$ be the total energy required to produce $Q$ in one period. The economy produces $E$ with a cobb-douglass specification:
+
+$$
+\Omega=W_a^\alpha W_b^\beta W_g^\delta
+$$
+
+where $W_A$ is the amount of clean energy used, while $W_B$ and $W_G$ are coal and gas respectively. if $P$ is a vector of prices of the three sources of energy, producers in the economy are faced with a cost minimization problem to produce $Q$, and by extension, $E$.
+
+$$
+\begin{aligned}
+\min_{W} \ &  P \cdot W \\
+\mbox{subject to } \ & \Omega=W_a^\alpha W_b^\beta W_g^\delta
+\end{aligned}
+$$
+
+We can linearize the energy production function with log to get
+
+$$
+\omega=\alpha w_a+\beta w_b+\delta w_g
+$$
+
+where the lower case is the log of the uppercase counterparts.
+
+With the above emission constraint, we have a complete linear system as follows:
+
+$$
+\begin{aligned}
+\min_{W} \ &  P \cdot W \\
+\mbox{subject to } \ & \alpha w_a+\beta w_b+\delta w_G=\omega \\
+ & bw_b+gw_g \le \mu \\
+ & w_a,w_b,w_g \ge 0\\
+\end{aligned}
+$$
+
+
+
+```{python}
+#| warning: false
+#| error: false
+import pandas as pd
+import numpy as np
+from scipy.optimize import linprog
+
+omega=279511240.0 #MWh
+E=619280000000.0 #KgCO2
+
+# Construct parameters
+c_ex1 = np.array([1284440, 667880])
+
+# Inequality constraints
+A_ex1 = np.array([[-1, -1],
+                  [0,350]])
+b_ex1 = np.array([-omega,E])
+
+bounds_ex2 = [(  0,    None),
+              (0, None)]
+
+# Solve the problem
+# we put a negative sign on the objective as linprog does minimization
+res_ex1 = linprog(c_ex1, A_ub=A_ex1, b_ub=b_ex1,bounds=bounds_ex2)
+
+res_ex1
+```
+
+```{python}
+#| warning: false
+#| error: false
+import pandas as pd
+import numpy as np
+from scipy.optimize import linprog
+
+# Construct parameters
+c_ex1 = np.array([1284,398])
+
+# Inequality constraints
+A_ex1 = np.array([[-1, -1],
+                  [0,350]])
+b_ex1 = np.array([-1.084*270000000,563200000])
+
+# Solve the problem
+# we put a negative sign on the objective as linprog does minimization
+res_ex1 = linprog(c_ex1, A_ub=A_ex1, b_ub=b_ex1)
+
+res_ex1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
+
+## Bibliography
