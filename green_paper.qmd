@@ -3,6 +3,8 @@ title: "green_paper"
 author: "Krisna Gupta"
 abstract: "awokawokawo"
 jupyter: python3
+execute: 
+  echo: false
 format: 
   pdf:
     toc: false
@@ -27,7 +29,7 @@ kwoakoawkoakwokawo
 
 ## Method
 
-Let $Q$ be a quantity produced by the Indonesian economy which is nested with a leontief production function with energy. That is, $Q=\min \{F(.),\Omega\}$, where $F$ is a combination of factors such as capital and labour. Let $\Omega$ be the total energy required to produce $Q$ in one period. The economy produces $\omega$ with a fully substitute sources:
+Let $Q$ be a quantity produced by the Indonesian economy which is nested with a leontief production function with energy. That is, $Q=\min (F(.),G(\omega))$, where $F$ is a combination of factors such as capital and labour. Let $\Omega$ be the total energy required to produce $Q$ in one period. The economy produces $\omega$ with a fully substitute sources:
 
 $$
 \omega=w_a+w_b+w_g
@@ -91,6 +93,7 @@ The linear setting in the previous section is trivial enough to be solved by lin
 ```{python}
 #| warning: false
 #| error: false
+#| echo: false
 import pandas as pd
 import numpy as np
 from scipy.optimize import linprog
@@ -157,37 +160,82 @@ class carbon:
 ```
 
 
-## Reserves
+## Bibliography {.unnumbered}
 
-```{python}
+::: {#refs}
+:::
+
+## Appendix {.appendix}
+
+### Linear programming exercise
+
+This paper modifies @quant.
+
+```python
 #| warning: false
 #| error: false
+#| echo: false
 import pandas as pd
 import numpy as np
 from scipy.optimize import linprog
 
-omega=279511240.0 #MWh
-E=619280000000.0 #KgCO2
-ba=(0,None)
-bb=(0,None)
-# Construct parameters
-c_ex1 = np.array([1284440, 667880])
+class carbon:
+  r"""
+  implements the perfect substition of energy usage with prices and emission as the contraints. Note: the default emission is calculated by share of electricity generated times its emission factor.
+  """
+  
+  def __init__(self, omega=279511240.0,  #MWh
+                     e=217459744720.0,   #KgCO2
+                     pa=1284440,         #Rp/MWh
+                     pb=667880,          #Rp/MWh
+                     pg=1247930,         #Rp/MWh
+                     a=100,              #KgCO2/MWh
+                     b=1000,             #KgCO2/MWh
+                     g=700,              #KgCO2/MWh
+                     ba=(0,None),
+                     bb=(0,None),
+                     bg=(0,None)
+                     ):
+    self.omega,self.e,self.pa,self.pb,self.pg,self.a,self.b,self.g=omega,e,pa,pb,pg,a,b,g
+    self.ba,self.bb,self.bg=ba,bb,bg
+    
+  def hasil(self):
+    omega,e,pa,pb,pg,a,b,g=self.omega,self.e,self.pa,self.pb,self.pg,self.a,self.b,self.g
+    ba,bb,bg=self.ba,self.bb,self.bg
+    # Construct parameters
+    c_ex1 = np.array([pa,pb,pg])
 
-# Inequality constraints
-A_ex1 = np.array([[-1, -1],
-                  [0,350]])
-b_ex1 = np.array([-omega,E])
+    # Inequality constraints
+    A_ex1 = np.array([[-1, -1,-1],
+                  [a,b,g]])
+    b_ex1 = np.array([-omega,e])
 
-bounds_ex2 = [ba,
-              bb]
+    bounds_ex2 = [ba,
+                  bb,
+                  bg]
 
-# Solve the problem
-# we put a negative sign on the objective as linprog does minimization
-res_ex1 = linprog(c_ex1, A_ub=A_ex1, b_ub=b_ex1,bounds=bounds_ex2)
-
-res_ex1
+    # Solve the problem
+    # we put a negative sign on the objective as linprog does minimization
+    res_ex1 = linprog(c_ex1, A_ub=A_ex1, b_ub=b_ex1,bounds=bounds_ex2)
+    return res_ex1
+  
+  def biaya(self):
+    omega,e,pa,pb,pg,a,b,g=self.omega,self.e,self.pa,self.pb,self.pg,self.a,self.b,self.g
+    h=self.hasil()['x']
+    v=np.array((pa,pb,pg))
+    return print(f'total biaya pembangkit listrik adalah {h @ v} rupiah')
+  
+  def emisi(self):
+    omega,e,pa,pb,pg,a,b,g=self.omega,self.e,self.pa,self.pb,self.pg,self.a,self.b,self.g
+    h=self.hasil()['x']
+    v=np.array((a,b,g))
+    return print(f'total emisi adalah {h @ v} kgCO2')
+  
+  def energi(self):
+    omega,e,pa,pb,pg,a,b,g=self.omega,self.e,self.pa,self.pb,self.pg,self.a,self.b,self.g
+    sumber=('EBT','batubara','fosil lain')
+    itung=self.hasil()['x']
+    for i,j in zip(sumber,itung):
+      print(f'jumlah energi dari {i} adalah {j} MWh')
+    
 ```
-
-## 
-
-## Bibliography

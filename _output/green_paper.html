@@ -6,6 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Krisna Gupta">
+<meta name="dcterms.date" content="2023-11-01">
 
 <title>green_paper</title>
 <style>
@@ -54,7 +56,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="green_paper_files/libs/clipboard/clipboard.min.js"></script>
@@ -68,6 +89,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="green_paper_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="green_paper_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -76,7 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="green_paper.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="green_paper.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="green_paper.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -88,37 +125,222 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Krisna Gupta </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 1, 2023</p>
+    </div>
+  </div>
   
     
   </div>
   
+<div>
+  <div class="abstract">
+    <div class="abstract-title">Abstract</div>
+    awokawokawo
+  </div>
+</div>
 
 </header>
 
-<section id="quarto" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="quarto"><span class="header-section-number">1</span> Quarto</h2>
-<p>Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <a href="https://quarto.org" class="uri">https://quarto.org</a>.</p>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
+<p>Some shit from <span class="citation" data-cites="SEBK17">Sabzevar et al. (<a href="#ref-SEBK17" role="doc-biblioref">2017</a>)</span> and <span class="citation" data-cites="HDZ17">He, Dou, and Zhang (<a href="#ref-HDZ17" role="doc-biblioref">2017</a>)</span> on calculation of cap n trade.</p>
 </section>
-<section id="running-code" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="running-code"><span class="header-section-number">2</span> Running Code</h2>
-<p>When you click the <strong>Render</strong> button a document will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2</code></pre>
+<section id="literature-review" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="literature-review"><span class="header-section-number">2</span> Literature Review</h2>
+<p>kwoakoawkoakwokawo</p>
+</section>
+<section id="method" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="method"><span class="header-section-number">3</span> Method</h2>
+<p>Let <span class="math inline">Q</span> be a quantity produced by the Indonesian economy which is nested with a leontief production function with energy. That is, <span class="math inline">Q=\min (F(.),G(\omega))</span>, where <span class="math inline">F</span> is a combination of factors such as capital and labour. Let <span class="math inline">\Omega</span> be the total energy required to produce <span class="math inline">Q</span> in one period. The economy produces <span class="math inline">\omega</span> with a fully substitute sources:</p>
+<p><span class="math display">
+\omega=w_a+w_b+w_g
+</span></p>
+<p>where <span class="math inline">w_a</span> is the amount of clean energy used, while <span class="math inline">w_b</span> and <span class="math inline">w_g</span> are coal and gas respectively. if <span class="math inline">p</span> is a vector of prices of the three sources of energy and <span class="math inline">w \in \{w_a,w_b,w_g\}</span>, producers in the economy are faced with a cost minimization problem to produce <span class="math inline">Q</span>, and by extension, <span class="math inline">\omega</span>.</p>
+<p><span class="math display">
+\begin{aligned}
+\min_{w} \ &amp;  p \cdot w \\
+\mbox{subject to } \ &amp; \omega=w_a+w_b+w_g
+\end{aligned}
+</span></p>
+<p>In this setting, <span class="math inline">\omega</span> is taken as exogenous as the consequence of the Leontief production nest. That is, factor of production is the driver of <span class="math inline">Q</span> and consequently <span class="math inline">\omega</span>. This assumption allows the use of the cost minimization technique and observe the cost impact of idiosyncratic shock to prices.</p>
+<p>We improve this setting by adding emission constraints. We limit total emission coming from the use of each source of energy. Next, we limit how much the total combination of emissions from these sources is allowed. This variable, then, can be set exogenously to reflect the government’s preference of emission.</p>
+<p>Let <span class="math inline">a,b,g</span> be parameters which reflect emission generated per megawatt hour by <span class="math inline">w_a, w_b, w_g</span> respectively. Let <span class="math inline">\varepsilon</span> be the total emission generated by the Indonesian electricity sector, Then the total emission generated by these sources is:</p>
+<p><span class="math display">
+aw_a+bw_b+gw_g=\varepsilon
+</span></p>
+<p>With the above emission constraint, we have a complete linear system as follows:</p>
+<p><span class="math display">
+\begin{aligned}
+\min_{W} \ &amp;  p \cdot w \\
+\mbox{subject to } \ &amp; w_a+ w_b+ w_G \ge \omega \\
+&amp; aw_a+bw_b+gw_g \le \varepsilon \\
+&amp; w_a,w_b,w_g \ge 0\\
+\end{aligned}
+</span></p>
+<p>The shock of the model can come from two exogenous variables <span class="math inline">p</span> which reflects a carbon tax, or <span class="math inline">\varepsilon</span> which reflects how much carbon quota is given in the economy as a whole.</p>
+<p>The next step is to find a representative parameter. <span class="citation" data-cites="pln">PLN (<a href="#ref-pln" role="doc-biblioref">2021</a>)</span> is the main source of <span class="math inline">\omega</span> and <span class="math inline">p \cdot w</span>. Perusahaan Listrk Negara (PLN) statistics is reliable since it is the sole distributor of electricity in Indonesia. According to <span class="citation" data-cites="pln">PLN (<a href="#ref-pln" role="doc-biblioref">2021</a>)</span>, Indonesia generates 279,511.24 Gigawatt hour (GWh) in 2021. From those, around 60% are produced using coal as its main source and around 23% by some mixes of fossil fuels. Only 17% is generated by renewables, mostly hydroelectric <span class="citation" data-cites="ember pln">(<a href="#ref-ember" role="doc-biblioref">Lolla and Yang 2021</a>; <a href="#ref-pln" role="doc-biblioref">PLN 2021</a>)</span>.</p>
+<p><span class="citation" data-cites="pln">PLN (<a href="#ref-pln" role="doc-biblioref">2021</a>)</span> also contains data on prices per Kilowatt hour of electricity based on sources. Total emission generated by the electricity sector is calculated based on the emission factor and how much energy source is used by the sector. Lastly, emission factor <span class="math inline">a,b,g</span> are calibrated from <span class="citation" data-cites="febijanto10">Febijanto (<a href="#ref-febijanto10" role="doc-biblioref">2010</a>)</span> and <span class="citation" data-cites="jrc">Steen (<a href="#ref-jrc" role="doc-biblioref">2021</a>)</span>. The number of emission factor varies between countries and in different reports, and emission factor in this paper tries to balance those differences<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>Also cekidot https://www.cnbcindonesia.com/news/20220119103739-4-308598/pajak-karbon-pltu-berlaku-april-2022-picu-tarif-listrik-naik</p>
+<p>https://publications.jrc.ec.europa.eu/repository/handle/JRC21207</p>
+<p>https://ebtke.esdm.go.id/post/2023/02/01/3414/rencana.pengembangan.pembangkit.nasional.beri.porsi.ebt.lebih.besar?lang=id</p>
+</section>
+<section id="results-and-discussions" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="results-and-discussions"><span class="header-section-number">4</span> Results and discussions</h2>
+<p>The linear setting in the previous section is trivial enough to be solved by linear programming method in Scipy <span class="citation" data-cites="quant">(<a href="#ref-quant" role="doc-biblioref">Sargent and Stachurski n.d.</a>)</span>. Four different cases are considered in this paper.</p>
+<table class="table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 23%">
+<col style="width: 61%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>case</th>
+<th>description</th>
+<th>model setting</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Status quo</td>
+<td>current share of energy use</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>carbon tax</td>
+<td>current share but carbon is taxed</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>long-run, no target</td>
+<td>long run changes if emission target</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>long-run with aggresive target</td>
+<td>like case 3 but with emission reduced by 27%</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="bibliography" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="bibliography">Bibliography</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-febijanto10" class="csl-entry" role="listitem">
+Febijanto, Irhan. 2010. <span>“Perhitungan Faktor Emisi Di Sistem Jaringan Ketenagalistrikan Jawa-Madura-Bali.”</span> <em>Jurnal Teknologi Lingkungan BPPT</em> 11 (2): 227–37. <a href="https://doi.org/10.29122/jtl.v11i2.1207">https://doi.org/10.29122/jtl.v11i2.1207</a>.
+</div>
+<div id="ref-HDZ17" class="csl-entry" role="listitem">
+He, Ping, Guowei Dou, and Wei Zhang. 2017. <span>“Optimal Production Planning and Cap Setting Under Cap-and-Trade Regulation.”</span> Journal Article. <em>The Journal of the Operational Research Society</em> 68 (9): 1094–1105. https://doi.org/<a href="https://doi.org/10.1057/s41274-016-0123-1">https://doi.org/10.1057/s41274-016-0123-1</a>.
+</div>
+<div id="ref-ember" class="csl-entry" role="listitem">
+Lolla, Aditya, and Muyi Yang. 2021. <span>“Indonesia: Indonesia Defies Global Trend with More Coal in the Generation-Mix.”</span> ember-climate; Global Electricity Review 2021: G20 profile.
+</div>
+<div id="ref-pln" class="csl-entry" role="listitem">
+PLN. 2021. <span>“Statistik PLN.”</span> 01001-220630. Perusahaan Listrik Negara.
+</div>
+<div id="ref-SEBK17" class="csl-entry" role="listitem">
+Sabzevar, Nikoo, S. T. Enns, Joule Bergerson, and Janne Kettunen. 2017. <span>“Modeling Competitive Firms’ Performance Under Price-Sensitive Demand and Cap-and-Trade Emissions Constraints.”</span> Journal Article. <em>International Journal of Production Economics</em> 184: 193–209. https://doi.org/<a href="https://doi.org/10.1016/j.ijpe.2016.10.024">https://doi.org/10.1016/j.ijpe.2016.10.024</a>.
+</div>
+<div id="ref-quant" class="csl-entry" role="listitem">
+Sargent, Thomas J., and John Stachurski. n.d. <span>“Intermediate Quantitative Economics with Python.”</span> quantecon.org.
+</div>
+<div id="ref-jrc" class="csl-entry" role="listitem">
+Steen, M. 2021. <span>“Greenhouse Gas Emissions from Fossil Fuel Fired Power Generation Systems.”</span> JRC21207. JRC Publications Repository. <a href="https://publications.jrc.ec.europa.eu/repository/handle/JRC21207">https://publications.jrc.ec.europa.eu/repository/handle/JRC21207</a>.
 </div>
 </div>
-<p>You can add options to executable code like this</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
-</div>
-</div>
-<p>The <code>echo: false</code> option disables the printing of code (only output is displayed).</p>
 </section>
 
-</main>
+
+
+<div id="quarto-appendix" class="default"><section id="appendix" class="level2 appendix" data-number="5"><h2 class="anchored quarto-appendix-heading"><span class="header-section-number">5</span> Appendix</h2><div class="quarto-appendix-contents">
+
+<section id="linear-programming-exercise" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="linear-programming-exercise"><span class="header-section-number">5.1</span> Linear programming exercise</h3>
+<p>This paper modifies <span class="citation" data-cites="quant">Sargent and Stachurski (<a href="#ref-quant" role="doc-biblioref">n.d.</a>)</span>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: false</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> linprog</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> carbon:</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">r"""</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">  implements the perfect substition of energy usage with prices and emission as the contraints. Note: the default emission is calculated by share of electricity generated times its emission factor.</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">  """</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, omega<span class="op">=</span><span class="fl">279511240.0</span>,  <span class="co">#MWh</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                     e<span class="op">=</span><span class="fl">217459744720.0</span>,   <span class="co">#KgCO2</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                     pa<span class="op">=</span><span class="dv">1284440</span>,         <span class="co">#Rp/MWh</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                     pb<span class="op">=</span><span class="dv">667880</span>,          <span class="co">#Rp/MWh</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>                     pg<span class="op">=</span><span class="dv">1247930</span>,         <span class="co">#Rp/MWh</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                     a<span class="op">=</span><span class="dv">100</span>,              <span class="co">#KgCO2/MWh</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>                     b<span class="op">=</span><span class="dv">1000</span>,             <span class="co">#KgCO2/MWh</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>                     g<span class="op">=</span><span class="dv">700</span>,              <span class="co">#KgCO2/MWh</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>                     ba<span class="op">=</span>(<span class="dv">0</span>,<span class="va">None</span>),</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>                     bb<span class="op">=</span>(<span class="dv">0</span>,<span class="va">None</span>),</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>                     bg<span class="op">=</span>(<span class="dv">0</span>,<span class="va">None</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>                     ):</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.omega,<span class="va">self</span>.e,<span class="va">self</span>.pa,<span class="va">self</span>.pb,<span class="va">self</span>.pg,<span class="va">self</span>.a,<span class="va">self</span>.b,<span class="va">self</span>.g<span class="op">=</span>omega,e,pa,pb,pg,a,b,g</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.ba,<span class="va">self</span>.bb,<span class="va">self</span>.bg<span class="op">=</span>ba,bb,bg</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> hasil(<span class="va">self</span>):</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    omega,e,pa,pb,pg,a,b,g<span class="op">=</span><span class="va">self</span>.omega,<span class="va">self</span>.e,<span class="va">self</span>.pa,<span class="va">self</span>.pb,<span class="va">self</span>.pg,<span class="va">self</span>.a,<span class="va">self</span>.b,<span class="va">self</span>.g</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    ba,bb,bg<span class="op">=</span><span class="va">self</span>.ba,<span class="va">self</span>.bb,<span class="va">self</span>.bg</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Construct parameters</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    c_ex1 <span class="op">=</span> np.array([pa,pb,pg])</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Inequality constraints</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    A_ex1 <span class="op">=</span> np.array([[<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>],</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>                  [a,b,g]])</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    b_ex1 <span class="op">=</span> np.array([<span class="op">-</span>omega,e])</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    bounds_ex2 <span class="op">=</span> [ba,</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>                  bb,</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>                  bg]</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Solve the problem</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    <span class="co"># we put a negative sign on the objective as linprog does minimization</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    res_ex1 <span class="op">=</span> linprog(c_ex1, A_ub<span class="op">=</span>A_ex1, b_ub<span class="op">=</span>b_ex1,bounds<span class="op">=</span>bounds_ex2)</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> res_ex1</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> biaya(<span class="va">self</span>):</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    omega,e,pa,pb,pg,a,b,g<span class="op">=</span><span class="va">self</span>.omega,<span class="va">self</span>.e,<span class="va">self</span>.pa,<span class="va">self</span>.pb,<span class="va">self</span>.pg,<span class="va">self</span>.a,<span class="va">self</span>.b,<span class="va">self</span>.g</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    h<span class="op">=</span><span class="va">self</span>.hasil()[<span class="st">'x'</span>]</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    v<span class="op">=</span>np.array((pa,pb,pg))</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">print</span>(<span class="ss">f'total biaya pembangkit listrik adalah </span><span class="sc">{</span>h <span class="op">@</span> v<span class="sc">}</span><span class="ss"> rupiah'</span>)</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> emisi(<span class="va">self</span>):</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    omega,e,pa,pb,pg,a,b,g<span class="op">=</span><span class="va">self</span>.omega,<span class="va">self</span>.e,<span class="va">self</span>.pa,<span class="va">self</span>.pb,<span class="va">self</span>.pg,<span class="va">self</span>.a,<span class="va">self</span>.b,<span class="va">self</span>.g</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    h<span class="op">=</span><span class="va">self</span>.hasil()[<span class="st">'x'</span>]</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>    v<span class="op">=</span>np.array((a,b,g))</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">print</span>(<span class="ss">f'total emisi adalah </span><span class="sc">{</span>h <span class="op">@</span> v<span class="sc">}</span><span class="ss"> kgCO2'</span>)</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> energi(<span class="va">self</span>):</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>    omega,e,pa,pb,pg,a,b,g<span class="op">=</span><span class="va">self</span>.omega,<span class="va">self</span>.e,<span class="va">self</span>.pa,<span class="va">self</span>.pb,<span class="va">self</span>.pg,<span class="va">self</span>.a,<span class="va">self</span>.b,<span class="va">self</span>.g</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    sumber<span class="op">=</span>(<span class="st">'EBT'</span>,<span class="st">'batubara'</span>,<span class="st">'fosil lain'</span>)</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>    itung<span class="op">=</span><span class="va">self</span>.hasil()[<span class="st">'x'</span>]</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i,j <span class="kw">in</span> <span class="bu">zip</span>(sumber,itung):</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="ss">f'jumlah energi dari </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> adalah </span><span class="sc">{</span>j<span class="sc">}</span><span class="ss"> MWh'</span>)</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>See appendix for a more complete codes and parameterisation used in this paper.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
