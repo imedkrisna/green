@@ -6,14 +6,17 @@ jupyter: python3
 execute: 
   echo: false
 format: 
+  html: 
+    code-fold: true
+    html-math-method: mathml
+    theme: united
+    mainfont: serif
   pdf:
     toc: false
     number-sections: true
     colorlinks: true
     documentclass: scrartcl
     papersize: a4
-  html: 
-    code-fold: true
   docx:
     toc: false
     number-sections: true
@@ -25,7 +28,13 @@ Some shit from @SEBK17 and @HDZ17 on calculation of cap n trade.
 
 ## Literature Review
 
-kwoakoawkoakwokawo
+The recent NDC and carbon market
+
+The Indonesian electricity 
+
+Some method people use
+
+kwoakoawkoakwokawo @paul1 @paul2 @budy
 
 ## Method
 
@@ -84,11 +93,11 @@ https://ebtke.esdm.go.id/post/2023/02/01/3414/rencana.pengembangan.pembangkit.na
 The linear setting in the previous section is trivial enough to be solved by linear programming method in Scipy [@quant]. Four different cases are considered in this paper.
 
 | case | description | model setting |
-| --- | ----- | ------------- |
-| 1 | Status quo | current share of energy use |
-| 2 | carbon tax | current share but carbon is taxed |
-| 3 | long-run, no target | long run changes if emission target |
-| 4 | long-run with aggresive target | like case 3 but with emission reduced by 27% |
+| --- | ---------- | ------------- |
+| 1 | status quo | current share of energy use |
+| 2 | current emission, optimized | current total emission, optimized |
+| 3 | carbon tax | current share but carbon is taxed |
+| 4 | long-run with aggresive target | like case 2 but with emission reduced by 27% |
 
 ```{python}
 #| warning: false
@@ -142,22 +151,73 @@ class carbon:
     omega,e,pa,pb,pg,a,b,g=self.omega,self.e,self.pa,self.pb,self.pg,self.a,self.b,self.g
     h=self.hasil()['x']
     v=np.array((pa,pb,pg))
-    return print(f'total biaya pembangkit listrik adalah {h @ v} rupiah')
+    c=(h @ v)/1e12
+    return c
+#    return print(f'total biaya pembangkit listrik adalah {c} triliun rupiah')
   
   def emisi(self):
     omega,e,pa,pb,pg,a,b,g=self.omega,self.e,self.pa,self.pb,self.pg,self.a,self.b,self.g
     h=self.hasil()['x']
     v=np.array((a,b,g))
-    return print(f'total emisi adalah {h @ v} kgCO2')
-  
-  def energi(self):
+    m=h @ v
+#    return print(f'total emisi adalah {m} kgCO2')
+    return m
+    
+  def summary(self):
     omega,e,pa,pb,pg,a,b,g=self.omega,self.e,self.pa,self.pb,self.pg,self.a,self.b,self.g
-    sumber=('EBT','batubara','fosil lain')
+    m=self.emisi()
+    c=self.biaya()
+#    lal=print(f'total biaya pembangkit listrik adalah {c:.2f} triliun rupiah')
+#    lel=print(f'total emisi adalah {m:,.2f} kgCO2')
+    lal=print(f'The total cost of electricity generation is {c:.2f} trillion IDR')
+    lel=print(f'The total emission is {m:,.2f} kgCO2')
+    sumber=('renewables','coal','other fossil fuels')
     itung=self.hasil()['x']
     for i,j in zip(sumber,itung):
-      print(f'jumlah energi dari {i} adalah {j} MWh')
+        print(f'Total electricity generated from {i} is {j:,.2f} MWh ({j/omega*100:.2f} %)')
+    return lal
+    return lel
+    
     
 ```
+
+Case 1: status quo
+
+```{python}
+case1=carbon(ba=(0,.17*279511240),bg=(0,.23*279511240))
+case1.summary()
+```
+
+case 2: minimized cost, same emission (no target)
+
+```{python}
+case2=carbon()
+case2.summary()
+```
+
+case 3: carbon tax
+```{python}
+case3=carbon(pb=667880*1.2,pg=1247930*1.1)
+case3.summary()
+```
+
+case 4: aggresive carbon cap
+```{python}
+case4=carbon(e=217459744720.0-(217459744720.0*.27))
+case4.summary()
+```
+
+case 5: non-aggresive transition
+```{python}
+case5=carbon(e=217459744720.0-(217459744720.0*.27),ba=(0,.3*279511240))
+case5.summary()
+
+```
+
+bangke `{python} case5.biaya()` anjay
+
+
+
 
 
 ## Bibliography {.unnumbered}
@@ -165,9 +225,9 @@ class carbon:
 ::: {#refs}
 :::
 
-## Appendix {.appendix}
+## Appendix {.unnumbered}
 
-### Linear programming exercise
+### Linear programming exercise {.unnumbered}
 
 This paper modifies @quant.
 
