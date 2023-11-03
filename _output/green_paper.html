@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Krisna Gupta">
-<meta name="dcterms.date" content="2023-11-02">
+<meta name="dcterms.date" content="2023-11-03">
 
 <title>green_paper</title>
 <style>
@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 /* CSS for citations */
 div.csl-bib-body { }
@@ -119,7 +85,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 2, 2023</p>
+      <p class="date">November 3, 2023</p>
     </div>
   </div>
   
@@ -183,6 +149,8 @@ aw_a+bw_b+gw_g=\varepsilon
 </section>
 <section id="results-and-discussions" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="results-and-discussions"><span class="header-section-number">4</span> Results and discussions</h2>
+<section id="perfect-substitution" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="perfect-substitution"><span class="header-section-number">4.1</span> Perfect substitution</h3>
 <p>The linear setting in the previous section is trivial enough to be solved by linear programming method in Scipy <span class="citation" data-cites="quant">(<a href="#ref-quant" role="doc-biblioref">Sargent and Stachurski n.d.</a>)</span>. Four different cases are considered in this paper.</p>
 <table class="table">
 <colgroup>
@@ -217,6 +185,11 @@ aw_a+bw_b+gw_g=\varepsilon
 <td>4</td>
 <td>long-run with aggresive target</td>
 <td>like case 2 but with emission reduced by 27%</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>long-run with renewable constraint</td>
+<td>case 4 with renewable contraint</td>
 </tr>
 </tbody>
 </table>
@@ -272,6 +245,7 @@ Total electricity generated from other fossil fuels is 150,991,971.85 MWh (54.02
 </div>
 <p>bangke <code>{python} case5.biaya()</code> anjay</p>
 </section>
+</section>
 <section id="bibliography" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="bibliography">Bibliography</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
@@ -306,79 +280,6 @@ Sargent, Thomas J., and John Stachurski. n.d. <span>“Intermediate Quantitative
 Steen, M. 2021. <span>“Greenhouse Gas Emissions from Fossil Fuel Fired Power Generation Systems.”</span> JRC21207. JRC Publications Repository. <a href="https://publications.jrc.ec.europa.eu/repository/handle/JRC21207">https://publications.jrc.ec.europa.eu/repository/handle/JRC21207</a>.
 </div>
 </div>
-</section>
-<section id="appendix" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="appendix">Appendix</h2>
-<section id="linear-programming-exercise" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="linear-programming-exercise">Linear programming exercise</h3>
-<p>This paper modifies <span class="citation" data-cites="quant">Sargent and Stachurski (<a href="#ref-quant" role="doc-biblioref">n.d.</a>)</span>.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: false</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> linprog</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> carbon:</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">r"""</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">  implements the perfect substition of energy usage with prices and emission as the contraints. Note: the default emission is calculated by share of electricity generated times its emission factor.</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">  """</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, omega<span class="op">=</span><span class="fl">279511240.0</span>,  <span class="co">#MWh</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>                     e<span class="op">=</span><span class="fl">217459744720.0</span>,   <span class="co">#KgCO2</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>                     pa<span class="op">=</span><span class="dv">1284440</span>,         <span class="co">#Rp/MWh</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>                     pb<span class="op">=</span><span class="dv">667880</span>,          <span class="co">#Rp/MWh</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>                     pg<span class="op">=</span><span class="dv">1247930</span>,         <span class="co">#Rp/MWh</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>                     a<span class="op">=</span><span class="dv">100</span>,              <span class="co">#KgCO2/MWh</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>                     b<span class="op">=</span><span class="dv">1000</span>,             <span class="co">#KgCO2/MWh</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>                     g<span class="op">=</span><span class="dv">700</span>,              <span class="co">#KgCO2/MWh</span></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>                     ba<span class="op">=</span>(<span class="dv">0</span>,<span class="va">None</span>),</span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>                     bb<span class="op">=</span>(<span class="dv">0</span>,<span class="va">None</span>),</span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>                     bg<span class="op">=</span>(<span class="dv">0</span>,<span class="va">None</span>)</span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>                     ):</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.omega,<span class="va">self</span>.e,<span class="va">self</span>.pa,<span class="va">self</span>.pb,<span class="va">self</span>.pg,<span class="va">self</span>.a,<span class="va">self</span>.b,<span class="va">self</span>.g<span class="op">=</span>omega,e,pa,pb,pg,a,b,g</span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.ba,<span class="va">self</span>.bb,<span class="va">self</span>.bg<span class="op">=</span>ba,bb,bg</span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> hasil(<span class="va">self</span>):</span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>    omega,e,pa,pb,pg,a,b,g<span class="op">=</span><span class="va">self</span>.omega,<span class="va">self</span>.e,<span class="va">self</span>.pa,<span class="va">self</span>.pb,<span class="va">self</span>.pg,<span class="va">self</span>.a,<span class="va">self</span>.b,<span class="va">self</span>.g</span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>    ba,bb,bg<span class="op">=</span><span class="va">self</span>.ba,<span class="va">self</span>.bb,<span class="va">self</span>.bg</span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Construct parameters</span></span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>    c_ex1 <span class="op">=</span> np.array([pa,pb,pg])</span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Inequality constraints</span></span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>    A_ex1 <span class="op">=</span> np.array([[<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>],</span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>                  [a,b,g]])</span>
-<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>    b_ex1 <span class="op">=</span> np.array([<span class="op">-</span>omega,e])</span>
-<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>    bounds_ex2 <span class="op">=</span> [ba,</span>
-<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>                  bb,</span>
-<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>                  bg]</span>
-<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Solve the problem</span></span>
-<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>    <span class="co"># we put a negative sign on the objective as linprog does minimization</span></span>
-<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>    res_ex1 <span class="op">=</span> linprog(c_ex1, A_ub<span class="op">=</span>A_ex1, b_ub<span class="op">=</span>b_ex1,bounds<span class="op">=</span>bounds_ex2)</span>
-<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> res_ex1</span>
-<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> biaya(<span class="va">self</span>):</span>
-<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>    omega,e,pa,pb,pg,a,b,g<span class="op">=</span><span class="va">self</span>.omega,<span class="va">self</span>.e,<span class="va">self</span>.pa,<span class="va">self</span>.pb,<span class="va">self</span>.pg,<span class="va">self</span>.a,<span class="va">self</span>.b,<span class="va">self</span>.g</span>
-<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>    h<span class="op">=</span><span class="va">self</span>.hasil()[<span class="st">'x'</span>]</span>
-<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>    v<span class="op">=</span>np.array((pa,pb,pg))</span>
-<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">print</span>(<span class="ss">f'total biaya pembangkit listrik adalah </span><span class="sc">{</span>h <span class="op">@</span> v<span class="sc">}</span><span class="ss"> rupiah'</span>)</span>
-<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> emisi(<span class="va">self</span>):</span>
-<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>    omega,e,pa,pb,pg,a,b,g<span class="op">=</span><span class="va">self</span>.omega,<span class="va">self</span>.e,<span class="va">self</span>.pa,<span class="va">self</span>.pb,<span class="va">self</span>.pg,<span class="va">self</span>.a,<span class="va">self</span>.b,<span class="va">self</span>.g</span>
-<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>    h<span class="op">=</span><span class="va">self</span>.hasil()[<span class="st">'x'</span>]</span>
-<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>    v<span class="op">=</span>np.array((a,b,g))</span>
-<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">print</span>(<span class="ss">f'total emisi adalah </span><span class="sc">{</span>h <span class="op">@</span> v<span class="sc">}</span><span class="ss"> kgCO2'</span>)</span>
-<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> energi(<span class="va">self</span>):</span>
-<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a>    omega,e,pa,pb,pg,a,b,g<span class="op">=</span><span class="va">self</span>.omega,<span class="va">self</span>.e,<span class="va">self</span>.pa,<span class="va">self</span>.pb,<span class="va">self</span>.pg,<span class="va">self</span>.a,<span class="va">self</span>.b,<span class="va">self</span>.g</span>
-<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a>    sumber<span class="op">=</span>(<span class="st">'EBT'</span>,<span class="st">'batubara'</span>,<span class="st">'fosil lain'</span>)</span>
-<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a>    itung<span class="op">=</span><span class="va">self</span>.hasil()[<span class="st">'x'</span>]</span>
-<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i,j <span class="kw">in</span> <span class="bu">zip</span>(sumber,itung):</span>
-<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="ss">f'jumlah energi dari </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> adalah </span><span class="sc">{</span>j<span class="sc">}</span><span class="ss"> MWh'</span>)</span>
-<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a>    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
 </section>
 
 

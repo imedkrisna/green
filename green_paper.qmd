@@ -90,6 +90,8 @@ https://ebtke.esdm.go.id/post/2023/02/01/3414/rencana.pengembangan.pembangkit.na
 
 ## Results and discussions
 
+### Perfect substitution
+
 The linear setting in the previous section is trivial enough to be solved by linear programming method in Scipy [@quant]. Four different cases are considered in this paper.
 
 | case | description | model setting |
@@ -98,6 +100,7 @@ The linear setting in the previous section is trivial enough to be solved by lin
 | 2 | current emission, optimized | current total emission, optimized |
 | 3 | carbon tax | current share but carbon is taxed |
 | 4 | long-run with aggresive target | like case 2 but with emission reduced by 27% |
+| 5 | long-run with renewable constraint | case 4 with renewable contraint |
 
 ```{python}
 #| warning: false
@@ -106,10 +109,13 @@ The linear setting in the previous section is trivial enough to be solved by lin
 import pandas as pd
 import numpy as np
 from scipy.optimize import linprog
+from scipy.optimize import fsolve
 
 class carbon:
   r"""
   implements the perfect substition of energy usage with prices and emission as the contraints. Note: the default emission is calculated by share of electricity generated times its emission factor.
+  
+  the cd() function, meawhile, proposes a cobb-douglass function for electricity generation. However, it hasn't been showing a good iteration regarding the parameterisation. More data is needed to make better calibrations.
   """
   
   def __init__(self, omega=279511240.0,  #MWh
@@ -177,7 +183,37 @@ class carbon:
         print(f'Total electricity generated from {i} is {j:,.2f} MWh ({j/omega*100:.2f} %)')
     return lal
     return lel
-    
+  
+  def cd(self,al=.1,
+              be=.6,
+              ga=.3,
+              b1=1e6,
+              b2=1e6,
+              b3=1e6,
+              ):
+    omega,e,pa,pb,pg,a,b,g=self.omega,self.e,self.pa,self.pb,self.pg,self.a,self.b,self.g
+    def func(w):
+      omuga=108558478
+      return [w[0]-omuga*((pb*al/pa/be)**be)*((pg*al/pa/ga)**ga),
+              w[1]-omuga*((pa*be/pb/al)**al)*((pg*be/pb/ga)**ga),
+              w[2]-omuga*((pa*ga/pg/al)**al)*((pb*ga/pg/be)**be),
+              a*w[0]+b*w[1]+g*w[2]-e]
+    root = fsolve(func,[b1,b2,b3,1],xtol=0.01)
+    root
+    return root
+  
+  def hasilcd(self):
+    omega,e,pa,pb,pg,a,b,g=self.omega,self.e,self.pa,self.pb,self.pg,self.a,self.b,self.g
+    sumber=('renewables','coal','other fossil fuels')
+    itung=(self.cd()[0],self.cd()[1],self.cd()[2])
+    c=(pa*self.cd()[0]+pb*self.cd()[1]+pg*self.cd()[2])/1e12
+    m=a*self.cd()[0]+b*self.cd()[1]+g*self.cd()[2]
+    for i,j in zip(sumber,itung):
+        print(f'Total electricity generated from {i} is {j:,.2f} MWh ({j/omega*100:.2f} %)')
+    lal=print(f'The total cost of electricity generation is {c:,.2f} trillion IDR')
+    lel=print(f'The total emission is {m:,.2f} kgCO2')
+    return lal
+    return lel
     
 ```
 
@@ -220,82 +256,10 @@ bangke `{python} case5.biaya()` anjay
 
 
 
+
+
 ## Bibliography {.unnumbered}
 
 ::: {#refs}
 :::
 
-## Appendix {.unnumbered}
-
-### Linear programming exercise {.unnumbered}
-
-This paper modifies @quant.
-
-```python
-#| warning: false
-#| error: false
-#| echo: false
-import pandas as pd
-import numpy as np
-from scipy.optimize import linprog
-
-class carbon:
-  r"""
-  implements the perfect substition of energy usage with prices and emission as the contraints. Note: the default emission is calculated by share of electricity generated times its emission factor.
-  """
-  
-  def __init__(self, omega=279511240.0,  #MWh
-                     e=217459744720.0,   #KgCO2
-                     pa=1284440,         #Rp/MWh
-                     pb=667880,          #Rp/MWh
-                     pg=1247930,         #Rp/MWh
-                     a=100,              #KgCO2/MWh
-                     b=1000,             #KgCO2/MWh
-                     g=700,              #KgCO2/MWh
-                     ba=(0,None),
-                     bb=(0,None),
-                     bg=(0,None)
-                     ):
-    self.omega,self.e,self.pa,self.pb,self.pg,self.a,self.b,self.g=omega,e,pa,pb,pg,a,b,g
-    self.ba,self.bb,self.bg=ba,bb,bg
-    
-  def hasil(self):
-    omega,e,pa,pb,pg,a,b,g=self.omega,self.e,self.pa,self.pb,self.pg,self.a,self.b,self.g
-    ba,bb,bg=self.ba,self.bb,self.bg
-    # Construct parameters
-    c_ex1 = np.array([pa,pb,pg])
-
-    # Inequality constraints
-    A_ex1 = np.array([[-1, -1,-1],
-                  [a,b,g]])
-    b_ex1 = np.array([-omega,e])
-
-    bounds_ex2 = [ba,
-                  bb,
-                  bg]
-
-    # Solve the problem
-    # we put a negative sign on the objective as linprog does minimization
-    res_ex1 = linprog(c_ex1, A_ub=A_ex1, b_ub=b_ex1,bounds=bounds_ex2)
-    return res_ex1
-  
-  def biaya(self):
-    omega,e,pa,pb,pg,a,b,g=self.omega,self.e,self.pa,self.pb,self.pg,self.a,self.b,self.g
-    h=self.hasil()['x']
-    v=np.array((pa,pb,pg))
-    return print(f'total biaya pembangkit listrik adalah {h @ v} rupiah')
-  
-  def emisi(self):
-    omega,e,pa,pb,pg,a,b,g=self.omega,self.e,self.pa,self.pb,self.pg,self.a,self.b,self.g
-    h=self.hasil()['x']
-    v=np.array((a,b,g))
-    return print(f'total emisi adalah {h @ v} kgCO2')
-  
-  def energi(self):
-    omega,e,pa,pb,pg,a,b,g=self.omega,self.e,self.pa,self.pb,self.pg,self.a,self.b,self.g
-    sumber=('EBT','batubara','fosil lain')
-    itung=self.hasil()['x']
-    for i,j in zip(sumber,itung):
-      print(f'jumlah energi dari {i} adalah {j} MWh')
-    
-```
