@@ -175,7 +175,7 @@ class carbon:
     c=self.biaya()
 #    lal=print(f'total biaya pembangkit listrik adalah {c:.2f} triliun rupiah')
 #    lel=print(f'total emisi adalah {m:,.2f} kgCO2')
-    lal=print(f'The total cost of electricity generation is {c:.2f} trillion IDR')
+    lal=print(f'The total cost of electricity generation is {c:.2f} trillion IDR or {c/omega*1e9:,.2f} IDR/KWh')
     lel=print(f'The total emission is {m:,.2f} kgCO2')
     sumber=('renewables','coal','other fossil fuels')
     itung=self.hasil()['x']
