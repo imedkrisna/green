@@ -26,6 +26,8 @@ format:
     theme: united
     mainfont: serif
   pdf:
+    include-in-header: 
+      file: aer.cls
     toc: false
     number-sections: true
     colorlinks: true
@@ -36,7 +38,7 @@ format:
     number-sections: true
 ---
 
-kirim ke [sini](https://journal.uii.ac.id/index.php/JEP)
+kirim ke [sini](https://onlinelibrary.wiley.com/journal/14678411) atau ke [sini](https://journal.uii.ac.id/index.php/JEP)
 
 ## Introduction
 
