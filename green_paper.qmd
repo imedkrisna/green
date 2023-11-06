@@ -153,7 +153,7 @@ The carbon tax scenario is the case 3. The 50 IDR/kgCO2 is imposed as a carbon t
 
 Case 4 and 5 poses restrictions on the total emission generated. The goal from CM1 and CM2 in the NDCs is implemented on the model. That is, case 4 and 5 imposes a restriction on total emission to be 12.5% and 15.5% lower than case 2 respectively. The goal of these exercise is to show how much more expensive electricity is under these scenarios, on top of the cost to make the switch in the first place.
 
-Lastly, we would like to know how much cost and emission generated under the government's plan for the PLN. 2 plans are tested. Case 6 tests the case where 25% of electricity generation is by renewable source as in @budy. There is a new plan, however, which pose a more aggressive 52% electricity from renewable resources [@memr2], which will be the case 7.
+Lastly, we would like to know how much the cost and emission generated under the government's plan for the PLN. 2 plans are tested. Case 6 tests the scenario where 25% of electricity generation is by renewable source as in @budy. There is a new plan, however, which pose a more aggressive 52% electricity from renewable resources [@memr2], which will be the case 7.
 
 All of these cases are summarized in @tbl-scenarios. These 7 cases are exercised as a benchmark for possible emission and cost of the Indonesian electricity generation. Moreover, these 7 cases also show the flexibility of the model in projecting cases by altering different exogenous variables. These exercises provides a good comparative static which will be discussed in the next section.
 
@@ -334,13 +334,15 @@ case7.summary()
 
 In general, there are several key feature from this model, mainly due to parameter choices. Firstly, it is clear that coal is the main choice for cost reduction. The high price relative to emission for other fossil fuels does not justify using it at all in the optimization process. The cost-emission trade-off is basically a choice between coal and renewable sources.
 
-Secondly, 
+Secondly, the perfect substitution assumption, without proper constraints to $w$, shows a typical corner solutions. That is, the cost-minimized combination of $w$ is to put everything to the cheapest $w$, both in terms of cost and emission. This is actually a good proxy of the long run possibility, which explains why Indonesia are investing more on coal power plant, defying the tremd of most countries.
 
 ## Challenges
 
 on PV and wind @paul2
 
 Calculation for cost will likely changes when renewables increases so much. Investment cost can be internalized in a Levelized Cost of Energy (LCOE) [need citation]. However, non-monetary cost like land rights can be a constraint as well. Securing land rights has already become a problem for geothermal [@paul1]. If solar PV and wind has reached a certain level, securing land rights will be a bottleneck. While cost per KWh of LCOE has been an important indicator for planning electricity generation, the government must also consider how much area needed per KWh.
+
+Possible violation from perfect substitution and linear cost. Perfect substitution can be changed with either real input factor, while linear cost is possible if the cost faces variable returns to scale. Fix cost, load, land.
 
 cap-n-trade Some shit from @SEBK17 and @HDZ17 on calculation of cap n trade.
 

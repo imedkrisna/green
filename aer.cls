@@ -41,7 +41,7 @@
 
 \DeclareOption{AER}{
   % AER is the default if no journal is specified
-  \def\@issueName{THE AMERICAN ECONOMIC REVIEW}
+  \def\@issueName{ }
   \@twosidetrue  
   \@twocolumnfalse
 }
@@ -569,8 +569,8 @@
 }
 \fi
 
-\pagestyle{headings}
-\thispagestyle{titlepage}
+%\pagestyle{headings}
+%\thispagestyle{titlepage}
 \pagenumbering{arabic}
 
 % justification

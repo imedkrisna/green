@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Krisna Gupta">
-<meta name="dcterms.date" content="2023-11-05">
+<meta name="dcterms.date" content="2023-11-06">
 
 <title>Greening the grid: The implication of aggressive emission target on Indonesian electricity generation</title>
 <style>
@@ -94,7 +94,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 5, 2023</p>
+      <p class="date">November 6, 2023</p>
     </div>
   </div>
   
@@ -227,7 +227,7 @@ aw_a+bw_b+gw_g=\varepsilon
 <p>Case 2 is the cost optimization given the same electricity generated and the same total emission from case 1. This scenario shows what the model would tell us how much share of electricity would be if the sector is fully substitute with no switching cost. One can argue the case for long-run generation if there is no emission targeting in place. That is, the country adjust the electricity generation solely for accessibility. Looking at how the coal progresses in Indonesia, this scenario would likely shows us a total coal domination if it is not restricted.</p>
 <p>The carbon tax scenario is the case 3. The 50 IDR/kgCO2 is imposed as a carbon tax. This tax is extremely low, however, which translates to 0.6 IDR/KWh. Since the price of electricity in 2023 is around 1,400 IDR/KWh, the proposed carbon tax is extremely trivial. It may poses no change compared to the case 2.</p>
 <p>Case 4 and 5 poses restrictions on the total emission generated. The goal from CM1 and CM2 in the NDCs is implemented on the model. That is, case 4 and 5 imposes a restriction on total emission to be 12.5% and 15.5% lower than case 2 respectively. The goal of these exercise is to show how much more expensive electricity is under these scenarios, on top of the cost to make the switch in the first place.</p>
-<p>Lastly, we would like to know how much cost and emission generated under the government’s plan for the PLN. 2 plans are tested. Case 6 tests the case where 25% of electricity generation is by renewable source as in <span class="citation" data-cites="budy">Resosudarmo, Rezki, and Effendi (<a href="#ref-budy" role="doc-biblioref">2023</a>)</span>. There is a new plan, however, which pose a more aggressive 52% electricity from renewable resources <span class="citation" data-cites="memr2">(<a href="#ref-memr2" role="doc-biblioref">MEMR 2020a</a>)</span>, which will be the case 7.</p>
+<p>Lastly, we would like to know how much the cost and emission generated under the government’s plan for the PLN. 2 plans are tested. Case 6 tests the scenario where 25% of electricity generation is by renewable source as in <span class="citation" data-cites="budy">Resosudarmo, Rezki, and Effendi (<a href="#ref-budy" role="doc-biblioref">2023</a>)</span>. There is a new plan, however, which pose a more aggressive 52% electricity from renewable resources <span class="citation" data-cites="memr2">(<a href="#ref-memr2" role="doc-biblioref">MEMR 2020a</a>)</span>, which will be the case 7.</p>
 <p>All of these cases are summarized in <a href="#tbl-scenarios">Table&nbsp;2</a>. These 7 cases are exercised as a benchmark for possible emission and cost of the Indonesian electricity generation. Moreover, these 7 cases also show the flexibility of the model in projecting cases by altering different exogenous variables. These exercises provides a good comparative static which will be discussed in the next section.</p>
 <div id="tbl-scenarios" class="anchored">
 <table class="table-hover table-striped table">
@@ -286,78 +286,81 @@ aw_a+bw_b+gw_g=\varepsilon
 <p>Case 1: status quo</p>
 <div class="cell" data-execution_count="2">
 <div class="cell-output cell-output-stdout">
-<pre><code>The total cost of electricity generation is 262.29 trillion IDR or 906.11 IDR/KWh
+<pre><code>The total cost is 262.29 trillion IDR or 906.11 IDR/KWh
 The total emission is 225,208,103,460.00 kgCO2
-Total electricity generated from renewables is 49,209,996.90 MWh (17.00 %)
-Total electricity generated from coal is 173,682,342.00 MWh (60.00 %)
-Total electricity generated from other fossil fuels is 66,578,231.10 MWh (23.00 %)</code></pre>
+Total electricity by renewables is 49,209,996.90 MWh (17.00 %)
+Total electricity by coal is 173,682,342.00 MWh (60.00 %)
+Total electricity by other fossil fuels is 66,578,231.10 MWh (23.00 %)</code></pre>
 </div>
 </div>
 <p>case 2: minimized cost, same emission (no target)</p>
 <div class="cell" data-execution_count="3">
 <div class="cell-output cell-output-stdout">
-<pre><code>The total cost of electricity generation is 237.36 trillion IDR or 819.96 IDR/KWh
+<pre><code>The total cost is 237.36 trillion IDR or 819.96 IDR/KWh
 The total emission is 225,208,103,460.00 kgCO2
-Total electricity generated from renewables is 71,402,740.60 MWh (24.67 %)
-Total electricity generated from coal is 218,067,829.40 MWh (75.33 %)
-Total electricity generated from other fossil fuels is 0.00 MWh (0.00 %)</code></pre>
+Total electricity by renewables is 71,402,740.60 MWh (24.67 %)
+Total electricity by coal is 218,067,829.40 MWh (75.33 %)
+Total electricity by other fossil fuels is 0.00 MWh (0.00 %)</code></pre>
 </div>
 </div>
 <p>case 3: carbon tax</p>
 <div class="cell" data-execution_count="4">
 <div class="cell-output cell-output-stdout">
-<pre><code>The total cost of electricity generation is 237.49 trillion IDR or 820.42 IDR/KWh
+<pre><code>The total cost is 237.49 trillion IDR or 820.42 IDR/KWh
 The total emission is 225,208,103,460.00 kgCO2
-Total electricity generated from renewables is 71,402,740.60 MWh (24.67 %)
-Total electricity generated from coal is 218,067,829.40 MWh (75.33 %)
-Total electricity generated from other fossil fuels is 0.00 MWh (0.00 %)</code></pre>
+Total electricity by renewables is 71,402,740.60 MWh (24.67 %)
+Total electricity by coal is 218,067,829.40 MWh (75.33 %)
+Total electricity by other fossil fuels is 0.00 MWh (0.00 %)</code></pre>
 </div>
 </div>
 <p>case 4: CM1</p>
 <div class="cell" data-execution_count="5">
 <div class="cell-output cell-output-stdout">
-<pre><code>The total cost of electricity generation is 261.29 trillion IDR or 902.63 IDR/KWh
+<pre><code>The total cost is 261.29 trillion IDR or 902.63 IDR/KWh
 The total emission is 190,277,276,630.00 kgCO2
-Total electricity generated from renewables is 110,214,770.41 MWh (38.07 %)
-Total electricity generated from coal is 179,255,799.59 MWh (61.93 %)
-Total electricity generated from other fossil fuels is 0.00 MWh (0.00 %)</code></pre>
+Total electricity by renewables is 110,214,770.41 MWh (38.07 %)
+Total electricity by coal is 179,255,799.59 MWh (61.93 %)
+Total electricity by other fossil fuels is 0.00 MWh (0.00 %)</code></pre>
 </div>
 </div>
 <p>case 5: CM2</p>
 <div class="cell" data-execution_count="6">
 <div class="cell-output cell-output-stdout">
-<pre><code>The total cost of electricity generation is 265.75 trillion IDR or 918.07 IDR/KWh
+<pre><code>The total cost is 265.75 trillion IDR or 918.07 IDR/KWh
 The total emission is 183,753,484,288.40 kgCO2
-Total electricity generated from renewables is 117,463,428.57 MWh (40.58 %)
-Total electricity generated from coal is 172,007,141.43 MWh (59.42 %)
-Total electricity generated from other fossil fuels is 0.00 MWh (0.00 %)</code></pre>
+Total electricity by renewables is 117,463,428.57 MWh (40.58 %)
+Total electricity by coal is 172,007,141.43 MWh (59.42 %)
+Total electricity by other fossil fuels is 0.00 MWh (0.00 %)</code></pre>
 </div>
 </div>
 <p>case 6: old RUPTL</p>
 <div class="cell" data-execution_count="7">
 <div class="cell-output cell-output-stdout">
-<pre><code>The total cost of electricity generation is 237.95 trillion IDR or 822.02 IDR/KWh
+<pre><code>The total cost is 237.95 trillion IDR or 822.02 IDR/KWh
 The total emission is 224,339,691,750.00 kgCO2
-Total electricity generated from renewables is 72,367,642.50 MWh (25.00 %)
-Total electricity generated from coal is 217,102,927.50 MWh (75.00 %)
-Total electricity generated from other fossil fuels is 0.00 MWh (0.00 %)</code></pre>
+Total electricity by renewables is 72,367,642.50 MWh (25.00 %)
+Total electricity by coal is 217,102,927.50 MWh (75.00 %)
+Total electricity by other fossil fuels is 0.00 MWh (0.00 %)</code></pre>
 </div>
 </div>
 <p>case 7: new RUPTL</p>
 <div class="cell" data-execution_count="8">
 <div class="cell-output cell-output-stdout">
-<pre><code>The total cost of electricity generation is 286.14 trillion IDR or 988.49 IDR/KWh
+<pre><code>The total cost is 286.14 trillion IDR or 988.49 IDR/KWh
 The total emission is 153,998,343,240.00 kgCO2
-Total electricity generated from renewables is 150,524,696.40 MWh (52.00 %)
-Total electricity generated from coal is 138,945,873.60 MWh (48.00 %)
-Total electricity generated from other fossil fuels is 0.00 MWh (0.00 %)</code></pre>
+Total electricity by renewables is 150,524,696.40 MWh (52.00 %)
+Total electricity by coal is 138,945,873.60 MWh (48.00 %)
+Total electricity by other fossil fuels is 0.00 MWh (0.00 %)</code></pre>
 </div>
 </div>
-<p>bangke <code>{python} case5.biaya()</code> anjay</p>
+<p>In general, there are several key feature from this model, mainly due to parameter choices. Firstly, it is clear that coal is the main choice for cost reduction. The high price relative to emission for other fossil fuels does not justify using it at all in the optimization process. The cost-emission trade-off is basically a choice between coal and renewable sources.</p>
+<p>Secondly, the perfect substitution assumption, without proper constraints to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>, shows a typical corner solutions. That is, the cost-minimized combination of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math> is to put everything to the cheapest <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>, both in terms of cost and emission. This is actually a good proxy of the long run possibility, which explains why Indonesia are investing more on coal power plant, defying the tremd of most countries.</p>
 </section>
 <section id="challenges" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="challenges"><span class="header-section-number">5</span> Challenges</h2>
 <p>on PV and wind <span class="citation" data-cites="paul2">Burke et al. (<a href="#ref-paul2" role="doc-biblioref">2019</a>)</span></p>
+<p>Calculation for cost will likely changes when renewables increases so much. Investment cost can be internalized in a Levelized Cost of Energy (LCOE) [need citation]. However, non-monetary cost like land rights can be a constraint as well. Securing land rights has already become a problem for geothermal <span class="citation" data-cites="paul1">(<a href="#ref-paul1" role="doc-biblioref">Burke and Kurniawati 2018</a>)</span>. If solar PV and wind has reached a certain level, securing land rights will be a bottleneck. While cost per KWh of LCOE has been an important indicator for planning electricity generation, the government must also consider how much area needed per KWh.</p>
+<p>Possible violation from perfect substitution and linear cost. Perfect substitution can be changed with either real input factor, while linear cost is possible if the cost faces variable returns to scale. Fix cost, load, land.</p>
 <p>cap-n-trade Some shit from <span class="citation" data-cites="SEBK17">Sabzevar et al. (<a href="#ref-SEBK17" role="doc-biblioref">2017</a>)</span> and <span class="citation" data-cites="HDZ17">He, Dou, and Zhang (<a href="#ref-HDZ17" role="doc-biblioref">2017</a>)</span> on calculation of cap n trade.</p>
 </section>
 <section id="conclusion" class="level2" data-number="6">
@@ -435,14 +438,14 @@ Wahyuni, Elisa. 2022. <span>“Challenges in Facing Indonesia’s Energy Commitm
   author = {Gupta, Krisna},
   title = {Greening the Grid: {The} Implication of Aggressive Emission
     Target on {Indonesian} Electricity Generation},
-  date = {2023-11-05},
+  date = {2023-11-06},
   langid = {en},
   abstract = {Motivation, objective, method, results, implications.}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-gupta2023" class="csl-entry quarto-appendix-citeas" role="listitem">
 Gupta, Krisna. 2023. <span>“Greening the Grid: The Implication of
 Aggressive Emission Target on Indonesian Electricity Generation.”</span>
-Working Paper. November 5, 2023.
+Working Paper. November 6, 2023.
 </div></div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
