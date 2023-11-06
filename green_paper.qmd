@@ -244,12 +244,12 @@ class carbon:
     c=self.biaya()
 #    lal=print(f'total biaya pembangkit listrik adalah {c:.2f} triliun rupiah')
 #    lel=print(f'total emisi adalah {m:,.2f} kgCO2')
-    lal=print(f'The total cost of electricity generation is {c:.2f} trillion IDR or {c/omega*1e9:,.2f} IDR/KWh')
+    lal=print(f'The total cost is {c:.2f} trillion IDR or {c/omega*1e9:,.2f} IDR/KWh')
     lel=print(f'The total emission is {m:,.2f} kgCO2')
     sumber=('renewables','coal','other fossil fuels')
     itung=self.hasil()['x']
     for i,j in zip(sumber,itung):
-        print(f'Total electricity generated from {i} is {j:,.2f} MWh ({j/omega*100:.2f} %)')
+        print(f'Total electricity by {i} is {j:,.2f} MWh ({j/omega*100:.2f} %)')
     return lal
     return lel
   
@@ -332,11 +332,15 @@ case7=carbon(ba=(.52*289470570.0,None))
 case7.summary()
 ```
 
-bangke `{python} case5.biaya()` anjay
+In general, there are several key feature from this model, mainly due to parameter choices. Firstly, it is clear that coal is the main choice for cost reduction. The high price relative to emission for other fossil fuels does not justify using it at all in the optimization process. The cost-emission trade-off is basically a choice between coal and renewable sources.
+
+Secondly, 
 
 ## Challenges
 
 on PV and wind @paul2
+
+Calculation for cost will likely changes when renewables increases so much. Investment cost can be internalized in a Levelized Cost of Energy (LCOE) [need citation]. However, non-monetary cost like land rights can be a constraint as well. Securing land rights has already become a problem for geothermal [@paul1]. If solar PV and wind has reached a certain level, securing land rights will be a bottleneck. While cost per KWh of LCOE has been an important indicator for planning electricity generation, the government must also consider how much area needed per KWh.
 
 cap-n-trade Some shit from @SEBK17 and @HDZ17 on calculation of cap n trade.
 
