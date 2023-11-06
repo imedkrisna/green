@@ -332,9 +332,9 @@ case7=carbon(ba=(.52*289470570.0,None))
 case7.summary()
 ```
 
-In general, there are several key feature from this model, mainly due to parameter choices. Firstly, it is clear that coal is the main choice for cost reduction. The high price relative to emission for other fossil fuels does not justify using it at all in the optimization process. The cost-emission trade-off is basically a choice between coal and renewable sources.
+In general, it is clear that coal is the main choice for cost reduction. The high price relative to emission for other fossil fuels does not justify using it at all in the optimization process. The cost-emission trade-off is basically a choice between coal and renewable sources. To reflect the status quo, some constraints need to be imposed on the variables. 
 
-Secondly, the perfect substitution assumption, without proper constraints to $w$, shows a typical corner solutions. That is, the cost-minimized combination of $w$ is to put everything to the cheapest $w$, both in terms of cost and emission. This is actually a good proxy of the long run possibility, which explains why Indonesia are investing more on coal power plant, defying the tremd of most countries.
+In the short run, substitution one source of power to others require investment and time. 
 
 ## Challenges
 
