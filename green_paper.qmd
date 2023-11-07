@@ -31,9 +31,9 @@ format:
     colorlinks: true
     documentclass: scrartcl
     papersize: a4
-  docx:
-    toc: false
-    number-sections: true
+#  docx:
+#    toc: false
+#    number-sections: true
 ---
 
 ::: {.callout-warning}
@@ -46,7 +46,7 @@ The importance to ramp up efforts to decarbonize Indonesian energy sector just r
 
 For the energy sector, the Indonesian government pledged to reduce the emission from energy sector by 12.5% or by 15.5% with the global help. Energy sector remains an important emitter of GHG in Indonesia. While the target is not as aggresive as the forestry and land use sector, the energy sector is going to account for 58.17% of the total emission in 2030 under the business as usual (BAU) projection [@budy].
 
-In the energy sector, electricity generation will play an even greater role going forward. The latest data suggests the Indonesian electricity sector to provide around 20% of the Indonesian total energy needs [@wahyuni;@moef]. This share, however, will increase as the Indonesia nudge toward electrification of cooking and transportation [@budy]. Greening the Indonesian grid, therefore, become one of the most important challenge the Indonesian government must met to achieve the emission target [@paul2;@budy].
+In the energy sector, electricity generation will play an even greater role going forward. The latest data suggests the Indonesian electricity sector to provide around 20% of the Indonesian total energy needs [@wahyuni;@moef]. This share, however, will increase as the Indonesia nudge toward electrification of cooking and transportation [@budy]. Meanwhile, the Indonesian electricity sector aimed to have zero emission by 2040, far quicker than energy and other sectors in general [@ember1]. Greening the Indonesian grid, therefore, become one of the most important challenge the Indonesian government must met to achieve the emission target [@paul2;@budy].
 
 This paper aims to discuss the cost of the Indonesian electricity transition toward renewable under the government's aggressive emission target. Linear optimization assume perfect substitution with constraints is chosen as the preferred method to project the cost of electricity. Linear optimization is suitable for a perfect substitution grid [@cowell;@quant]. Moreover, the method is simple enough to replicate and provides a useful to make projection and plans given a proper parameterization and constraints.
 
@@ -153,9 +153,11 @@ The carbon tax scenario is the case 3. The 50 IDR/kgCO2 is imposed as a carbon t
 
 Case 4 and 5 poses restrictions on the total emission generated. The goal from CM1 and CM2 in the NDCs is implemented on the model. That is, case 4 and 5 imposes a restriction on total emission to be 12.5% and 15.5% lower than case 2 respectively. The goal of these exercise is to show how much more expensive electricity is under these scenarios, on top of the cost to make the switch in the first place.
 
-Lastly, we would like to know how much the cost and emission generated under the government's plan for the PLN. 2 plans are tested. Case 6 tests the scenario where 25% of electricity generation is by renewable source as in @budy. There is a new plan, however, which pose a more aggressive 52% electricity from renewable resources [@memr2], which will be the case 7.
+Next, we would like to know how much the cost and emission generated under the government's plan for the PLN. According to @memr2, Indonesia will have 52% of its electricity to be sourced from renewables. Case 6 tests this scenario by limiting the lower bound of renewable electricity use by 52% and see how much emission it reduce and how much will it will cost to operate this distribution of electricity source.
 
-All of these cases are summarized in @tbl-scenarios. These 7 cases are exercised as a benchmark for possible emission and cost of the Indonesian electricity generation. Moreover, these 7 cases also show the flexibility of the model in projecting cases by altering different exogenous variables. These exercises provides a good comparative static which will be discussed in the next section.
+The last 2 cases demonstrate the situation when Indonesia has successfully implemented its strategy as explained by @ember2. That is, case 7 shows the situation when Indonesia is successfully reduced the use of coal to 0%, while case 8 shows the situation when Indonesia implements 100% renewable electricity, as projected by 2040 and 2050 respectivel [@ember2]. Case 7 is implemented by restricting the upper bound of $w_b$ by 0, while case 8 bounds electricy by 100%.
+
+All of these cases are summarized in @tbl-scenarios. These 8 cases are exercised as a benchmark for possible emission and cost of the Indonesian electricity generation. Moreover, these 8 cases also show the flexibility of the model in projecting cases by altering different exogenous variables. These exercises provides a good comparative static which will be discussed in the next section.
 
 | case | description | model setting |
 | --- | ---------- | ------------- |
@@ -164,12 +166,13 @@ All of these cases are summarized in @tbl-scenarios. These 7 cases are exercised
 | 3 | carbon tax | Same emission limit but with a carbon tax |
 | 4 | CM1 | same prices but a 12.5% emission reduction |
 | 5 | CM2 | same prices but a 15.5% emission reduction |
-| 6 | Old RUPTL | case 2 with 25% renewables |
-| 7 | New RUPTL | case 2 with 52% renewables |
+| 6 | New RUPTL | case 2 with 52% renewables |
+| 7 | Zero coal | case 2 with 0% coal |
+| 8 | Fully renewable | case 2 with 100% renewables |
 
 : scenario descriptions {#tbl-scenarios .hover .striped}
 
-## Results
+## Results and discussions
 
 ```{python}
 #| warning: false
@@ -320,16 +323,22 @@ case5=carbon(e=217459744720.0-(217459744720.0*.155))
 case5.summary()
 ```
 
-case 6: old RUPTL
-```{python}
-case6=carbon(ba=(.25*289470570.0,None))
-case6.summary()
-```
-
-case 7: new RUPTL
+case 6: new RUPTL
 ```{python}
 case7=carbon(ba=(.52*289470570.0,None))
 case7.summary()
+```
+
+case 7: 0% coal
+```{python}
+case6=carbon(bb=(0,0))
+case6.summary()
+```
+
+case 8: 100% renewable
+```{python}
+case6=carbon(ba=(289470570.0,None))
+case6.summary()
 ```
 
 In general, it is clear that coal is the main choice for cost reduction. The high price relative to emission for other fossil fuels does not justify using it at all in the optimization process. The cost-emission trade-off is basically a choice between coal and renewable sources. To reflect the status quo, some constraints need to be imposed on the variables. 
@@ -345,6 +354,8 @@ Calculation for cost will likely changes when renewables increases so much. Inve
 Possible violation from perfect substitution and linear cost. Perfect substitution can be changed with either real input factor, while linear cost is possible if the cost faces variable returns to scale. Fix cost, load, land.
 
 cap-n-trade Some shit from @SEBK17 and @HDZ17 on calculation of cap n trade.
+
+It is also important to note the think of this results in the broader scheme of emission reduction. The largest emission reduction according to the Indonesian NDCs will come from the agriculture, forestry and land use sector. So far, forestry and land use in Indonesia has covered by the REDD+ scheme under a limited success [@hermawan;@indrajaya;@kim]. The success of a program like REDD+ relies on various issues like governance and evaluation, which still need a lot of work, especially for the Indonesian government. [@shin;@goncalves;@goldstein]. If sectors outside of energy do not progress as expected, then the energy sector may have to pick up the pace.
 
 ## Conclusion
 

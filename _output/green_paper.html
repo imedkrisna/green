@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Krisna Gupta">
-<meta name="dcterms.date" content="2023-11-06">
+<meta name="dcterms.date" content="2023-11-07">
 
 <title>Greening the grid: The implication of aggressive emission target on Indonesian electricity generation</title>
 <style>
@@ -63,7 +63,7 @@ div.csl-indent {
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="green_paper.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="green_paper.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></div>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="green_paper.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -94,7 +94,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 6, 2023</p>
+      <p class="date">November 7, 2023</p>
     </div>
   </div>
   
@@ -127,7 +127,7 @@ Warning
 <h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
 <p>The importance to ramp up efforts to decarbonize Indonesian energy sector just reached a new height.The Indonesian government joined the global bandwagon of committing to a more emission reduction target. Just before the 27<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi></mi><mi>t</mi></msup><mi>h</mi></mrow><annotation encoding="application/x-tex">^th</annotation></semantics></math> session of the Conference of the PRties (COP27), The Indonesian government comitted to a more aggresive reduction of greenhouse gas (GHG) emission by 31.90% by 2030, or by 43.20% with the help of other countries <span class="citation" data-cites="budy">(<a href="#ref-budy" role="doc-biblioref">Resosudarmo, Rezki, and Effendi 2023</a>)</span>.</p>
 <p>For the energy sector, the Indonesian government pledged to reduce the emission from energy sector by 12.5% or by 15.5% with the global help. Energy sector remains an important emitter of GHG in Indonesia. While the target is not as aggresive as the forestry and land use sector, the energy sector is going to account for 58.17% of the total emission in 2030 under the business as usual (BAU) projection <span class="citation" data-cites="budy">(<a href="#ref-budy" role="doc-biblioref">Resosudarmo, Rezki, and Effendi 2023</a>)</span>.</p>
-<p>In the energy sector, electricity generation will play an even greater role going forward. The latest data suggests the Indonesian electricity sector to provide around 20% of the Indonesian total energy needs <span class="citation" data-cites="wahyuni moef">(<a href="#ref-wahyuni" role="doc-biblioref">Wahyuni 2022</a>; <a href="#ref-moef" role="doc-biblioref">MoEF 2021</a>)</span>. This share, however, will increase as the Indonesia nudge toward electrification of cooking and transportation <span class="citation" data-cites="budy">(<a href="#ref-budy" role="doc-biblioref">Resosudarmo, Rezki, and Effendi 2023</a>)</span>. Greening the Indonesian grid, therefore, become one of the most important challenge the Indonesian government must met to achieve the emission target <span class="citation" data-cites="paul2 budy">(<a href="#ref-paul2" role="doc-biblioref">Burke et al. 2019</a>; <a href="#ref-budy" role="doc-biblioref">Resosudarmo, Rezki, and Effendi 2023</a>)</span>.</p>
+<p>In the energy sector, electricity generation will play an even greater role going forward. The latest data suggests the Indonesian electricity sector to provide around 20% of the Indonesian total energy needs <span class="citation" data-cites="wahyuni moef">(<a href="#ref-wahyuni" role="doc-biblioref">Wahyuni 2022</a>; <a href="#ref-moef" role="doc-biblioref">MoEF 2021</a>)</span>. This share, however, will increase as the Indonesia nudge toward electrification of cooking and transportation <span class="citation" data-cites="budy">(<a href="#ref-budy" role="doc-biblioref">Resosudarmo, Rezki, and Effendi 2023</a>)</span>. Meanwhile, the Indonesian electricity sector aimed to have zero emission by 2040, far quicker than energy and other sectors in general <span class="citation" data-cites="ember1">(<a href="#ref-ember1" role="doc-biblioref">Edianto 2022</a>)</span>. Greening the Indonesian grid, therefore, become one of the most important challenge the Indonesian government must met to achieve the emission target <span class="citation" data-cites="paul2 budy">(<a href="#ref-paul2" role="doc-biblioref">Burke et al. 2019</a>; <a href="#ref-budy" role="doc-biblioref">Resosudarmo, Rezki, and Effendi 2023</a>)</span>.</p>
 <p>This paper aims to discuss the cost of the Indonesian electricity transition toward renewable under the government’s aggressive emission target. Linear optimization assume perfect substitution with constraints is chosen as the preferred method to project the cost of electricity. Linear optimization is suitable for a perfect substitution grid <span class="citation" data-cites="cowell quant">(<a href="#ref-cowell" role="doc-biblioref">Cowell 2006</a>; <a href="#ref-quant" role="doc-biblioref">Sargent and Stachurski, n.d.</a>)</span>. Moreover, the method is simple enough to replicate and provides a useful to make projection and plans given a proper parameterization and constraints.</p>
 <p>findings and its implications</p>
 <p>The next section discusses the literature around the new emission target and Indonesia’s electricity sector. Section 3 explains the method of choice. Section 4 discusses the results and its implications toward greening the grid, and section 5 concludes.</p>
@@ -227,8 +227,9 @@ aw_a+bw_b+gw_g=\varepsilon
 <p>Case 2 is the cost optimization given the same electricity generated and the same total emission from case 1. This scenario shows what the model would tell us how much share of electricity would be if the sector is fully substitute with no switching cost. One can argue the case for long-run generation if there is no emission targeting in place. That is, the country adjust the electricity generation solely for accessibility. Looking at how the coal progresses in Indonesia, this scenario would likely shows us a total coal domination if it is not restricted.</p>
 <p>The carbon tax scenario is the case 3. The 50 IDR/kgCO2 is imposed as a carbon tax. This tax is extremely low, however, which translates to 0.6 IDR/KWh. Since the price of electricity in 2023 is around 1,400 IDR/KWh, the proposed carbon tax is extremely trivial. It may poses no change compared to the case 2.</p>
 <p>Case 4 and 5 poses restrictions on the total emission generated. The goal from CM1 and CM2 in the NDCs is implemented on the model. That is, case 4 and 5 imposes a restriction on total emission to be 12.5% and 15.5% lower than case 2 respectively. The goal of these exercise is to show how much more expensive electricity is under these scenarios, on top of the cost to make the switch in the first place.</p>
-<p>Lastly, we would like to know how much the cost and emission generated under the government’s plan for the PLN. 2 plans are tested. Case 6 tests the scenario where 25% of electricity generation is by renewable source as in <span class="citation" data-cites="budy">Resosudarmo, Rezki, and Effendi (<a href="#ref-budy" role="doc-biblioref">2023</a>)</span>. There is a new plan, however, which pose a more aggressive 52% electricity from renewable resources <span class="citation" data-cites="memr2">(<a href="#ref-memr2" role="doc-biblioref">MEMR 2020a</a>)</span>, which will be the case 7.</p>
-<p>All of these cases are summarized in <a href="#tbl-scenarios">Table&nbsp;2</a>. These 7 cases are exercised as a benchmark for possible emission and cost of the Indonesian electricity generation. Moreover, these 7 cases also show the flexibility of the model in projecting cases by altering different exogenous variables. These exercises provides a good comparative static which will be discussed in the next section.</p>
+<p>Next, we would like to know how much the cost and emission generated under the government’s plan for the PLN. According to <span class="citation" data-cites="memr2">MEMR (<a href="#ref-memr2" role="doc-biblioref">2020a</a>)</span>, Indonesia will have 52% of its electricity to be sourced from renewables. Case 6 tests this scenario by limiting the lower bound of renewable electricity use by 52% and see how much emission it reduce and how much will it will cost to operate this distribution of electricity source.</p>
+<p>The last 2 cases demonstrate the situation when Indonesia has successfully implemented its strategy as explained by <span class="citation" data-cites="ember2">(<a href="#ref-ember2" role="doc-biblioref"><strong>ember2?</strong></a>)</span>. That is, case 7 shows the situation when Indonesia is successfully reduced the use of coal to 0%, while case 8 shows the situation when Indonesia implements 100% renewable electricity, as projected by 2040 and 2050 respectivel <span class="citation" data-cites="ember2">(<a href="#ref-ember2" role="doc-biblioref"><strong>ember2?</strong></a>)</span>. Case 7 is implemented by restricting the upper bound of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>w</mi><mi>b</mi></msub><annotation encoding="application/x-tex">w_b</annotation></semantics></math> by 0, while case 8 bounds electricy by 100%.</p>
+<p>All of these cases are summarized in <a href="#tbl-scenarios">Table&nbsp;2</a>. These 8 cases are exercised as a benchmark for possible emission and cost of the Indonesian electricity generation. Moreover, these 8 cases also show the flexibility of the model in projecting cases by altering different exogenous variables. These exercises provides a good comparative static which will be discussed in the next section.</p>
 <div id="tbl-scenarios" class="anchored">
 <table class="table-hover table-striped table">
 <caption>Table&nbsp;2: scenario descriptions</caption>
@@ -267,21 +268,26 @@ aw_a+bw_b+gw_g=\varepsilon
 </tr>
 <tr class="even">
 <td>6</td>
-<td>Old RUPTL</td>
-<td>case 2 with 25% renewables</td>
+<td>New RUPTL</td>
+<td>case 2 with 52% renewables</td>
 </tr>
 <tr class="odd">
 <td>7</td>
-<td>New RUPTL</td>
-<td>case 2 with 52% renewables</td>
+<td>Zero coal</td>
+<td>case 2 with 0% coal</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Fully renewable</td>
+<td>case 2 with 100% renewables</td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
 </section>
-<section id="results" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="results"><span class="header-section-number">4</span> Results</h2>
+<section id="results-and-discussions" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="results-and-discussions"><span class="header-section-number">4</span> Results and discussions</h2>
 <p>The 7 cases is shown below.</p>
 <p>Case 1: status quo</p>
 <div class="cell" data-execution_count="2">
@@ -333,23 +339,33 @@ Total electricity by coal is 172,007,141.43 MWh (59.42 %)
 Total electricity by other fossil fuels is 0.00 MWh (0.00 %)</code></pre>
 </div>
 </div>
-<p>case 6: old RUPTL</p>
+<p>case 6: new RUPTL</p>
 <div class="cell" data-execution_count="7">
-<div class="cell-output cell-output-stdout">
-<pre><code>The total cost is 237.95 trillion IDR or 822.02 IDR/KWh
-The total emission is 224,339,691,750.00 kgCO2
-Total electricity by renewables is 72,367,642.50 MWh (25.00 %)
-Total electricity by coal is 217,102,927.50 MWh (75.00 %)
-Total electricity by other fossil fuels is 0.00 MWh (0.00 %)</code></pre>
-</div>
-</div>
-<p>case 7: new RUPTL</p>
-<div class="cell" data-execution_count="8">
 <div class="cell-output cell-output-stdout">
 <pre><code>The total cost is 286.14 trillion IDR or 988.49 IDR/KWh
 The total emission is 153,998,343,240.00 kgCO2
 Total electricity by renewables is 150,524,696.40 MWh (52.00 %)
 Total electricity by coal is 138,945,873.60 MWh (48.00 %)
+Total electricity by other fossil fuels is 0.00 MWh (0.00 %)</code></pre>
+</div>
+</div>
+<p>case 7: 0% coal</p>
+<div class="cell" data-execution_count="8">
+<div class="cell-output cell-output-stdout">
+<pre><code>The total cost is 361.24 trillion IDR or 1,247.93 IDR/KWh
+The total emission is 202,629,399,000.00 kgCO2
+Total electricity by renewables is 0.00 MWh (0.00 %)
+Total electricity by coal is 0.00 MWh (0.00 %)
+Total electricity by other fossil fuels is 289,470,570.00 MWh (100.00 %)</code></pre>
+</div>
+</div>
+<p>case 8: 100% renewable</p>
+<div class="cell" data-execution_count="9">
+<div class="cell-output cell-output-stdout">
+<pre><code>The total cost is 371.81 trillion IDR or 1,284.44 IDR/KWh
+The total emission is 28,947,057,000.00 kgCO2
+Total electricity by renewables is 289,470,570.00 MWh (100.00 %)
+Total electricity by coal is 0.00 MWh (0.00 %)
 Total electricity by other fossil fuels is 0.00 MWh (0.00 %)</code></pre>
 </div>
 </div>
@@ -362,6 +378,7 @@ Total electricity by other fossil fuels is 0.00 MWh (0.00 %)</code></pre>
 <p>Calculation for cost will likely changes when renewables increases so much. Investment cost can be internalized in a Levelized Cost of Energy (LCOE) [need citation]. However, non-monetary cost like land rights can be a constraint as well. Securing land rights has already become a problem for geothermal <span class="citation" data-cites="paul1">(<a href="#ref-paul1" role="doc-biblioref">Burke and Kurniawati 2018</a>)</span>. If solar PV and wind has reached a certain level, securing land rights will be a bottleneck. While cost per KWh of LCOE has been an important indicator for planning electricity generation, the government must also consider how much area needed per KWh.</p>
 <p>Possible violation from perfect substitution and linear cost. Perfect substitution can be changed with either real input factor, while linear cost is possible if the cost faces variable returns to scale. Fix cost, load, land.</p>
 <p>cap-n-trade Some shit from <span class="citation" data-cites="SEBK17">Sabzevar et al. (<a href="#ref-SEBK17" role="doc-biblioref">2017</a>)</span> and <span class="citation" data-cites="HDZ17">He, Dou, and Zhang (<a href="#ref-HDZ17" role="doc-biblioref">2017</a>)</span> on calculation of cap n trade.</p>
+<p>It is also important to note the think of this results in the broader scheme of emission reduction. The largest emission reduction according to the Indonesian NDCs will come from the agriculture, forestry and land use sector. So far, forestry and land use in Indonesia has covered by the REDD+ scheme under a limited success <span class="citation" data-cites="hermawan indrajaya kim">(<a href="#ref-hermawan" role="doc-biblioref">Hermawan, Karim, and Rethel 2023</a>; <a href="#ref-indrajaya" role="doc-biblioref">Indrajaya et al. 2016</a>; <a href="#ref-kim" role="doc-biblioref">Kim et al. 2018</a>)</span>. The success of a program like REDD+ relies on various issues like governance and evaluation, which still need a lot of work, especially for the Indonesian government. <span class="citation" data-cites="shin goncalves goldstein">(<a href="#ref-shin" role="doc-biblioref">Shinbrot et al. 2022</a>; <a href="#ref-goncalves" role="doc-biblioref">Gonçalves 2022</a>; <a href="#ref-goldstein" role="doc-biblioref">Goldstein 2021</a>)</span>. If sectors outside of energy do not progress as expected, then the energy sector may have to pick up the pace.</p>
 </section>
 <section id="conclusion" class="level2" data-number="6">
 <h2 data-number="6" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">6</span> Conclusion</h2>
@@ -382,14 +399,32 @@ Burke, Paul J., Jinnie Widnyana, Zeba Anjum, Emma Aisbett, Budy Resosudarmo, and
 <div id="ref-cowell" class="csl-entry" role="listitem">
 Cowell, Frank A. 2006. <em>Microeconomics: Principles and Analysis</em>. OUP Oxford.
 </div>
+<div id="ref-ember1" class="csl-entry" role="listitem">
+Edianto, Achmed Shahram. 2022. <span>“Dapatkah Indonesia Wujudkan Listrik Nol Bersih Pada 2040?”</span> ember-climate. <a href="https://ember-climate.org/id/insights/commentary/can-indonesia-really-achieve-a-net-zero-electricity-sector-by-2040/">https://ember-climate.org/id/insights/commentary/can-indonesia-really-achieve-a-net-zero-electricity-sector-by-2040/</a>.
+</div>
 <div id="ref-febijanto10" class="csl-entry" role="listitem">
 Febijanto, Irhan. 2010. <span>“Perhitungan Faktor Emisi Di Sistem Jaringan Ketenagalistrikan Jawa-Madura-Bali.”</span> <em>Jurnal Teknologi Lingkungan BPPT</em> 11 (2): 227–37. <a href="https://doi.org/10.29122/jtl.v11i2.1207">https://doi.org/10.29122/jtl.v11i2.1207</a>.
+</div>
+<div id="ref-goldstein" class="csl-entry" role="listitem">
+Goldstein, Jenny E. 2021. <span>“More Data, More Problems? Incompatible Uncertainty in Indonesia’s Climate Change Mitigation Projects.”</span> <em>Geoforum</em> 123: 1–10.
+</div>
+<div id="ref-goncalves" class="csl-entry" role="listitem">
+Gonçalves, Veronica Korber. 2022. <span>“Carbon Offset from the Amazon Forest to Compensate Aviation Emissions: Global Solution, Local Struggles.”</span> <em>Earth System Governance</em> 14.
 </div>
 <div id="ref-gupta" class="csl-entry" role="listitem">
 Gupta, Krisna. 2021. <span>“The Importance of Financial Liberalisation to Economic Growth: The Case of Indonesia.”</span> Journal Article. <em>Bulletin of Indonesian Economic Studies</em> 57 (02): 175–201. <a href="https://doi.org/10.1080/00074918.2020.1747596">https://doi.org/10.1080/00074918.2020.1747596</a>.
 </div>
 <div id="ref-HDZ17" class="csl-entry" role="listitem">
 He, Ping, Guowei Dou, and Wei Zhang. 2017. <span>“Optimal Production Planning and Cap Setting Under Cap-and-Trade Regulation.”</span> <em>The Journal of the Operational Research Society</em> 68 (9): 1094–1105. https://doi.org/<a href="https://doi.org/10.1057/s41274-016-0123-1">https://doi.org/10.1057/s41274-016-0123-1</a>.
+</div>
+<div id="ref-hermawan" class="csl-entry" role="listitem">
+Hermawan, Silvio, Moch Faisal Karim, and Lena Rethel. 2023. <span>“Institutional Layering in Climate Policy: Insights from REDD+ Governance in Indonesia.”</span> <em>Forest Policy and Economics</em> 154: 103037.
+</div>
+<div id="ref-indrajaya" class="csl-entry" role="listitem">
+Indrajaya, Yonky, Edwin van der Werf, Hans-Peter Weikard, Frits Mohren, and Ekko C van Ierland. 2016. <span>“The Potential of REDD+ for Carbon Sequestration in Tropical Forests: Supply Curves for Carbon Storage for Kalimantan, Indonesia.”</span> <em>Forest Policy and Economics</em> 71: 1–10.
+</div>
+<div id="ref-kim" class="csl-entry" role="listitem">
+Kim, Yeon-Su, Sitti Latifah, Mansur Afifi, Mark Mulligan, Sophia Burke, Larry Fisher, Ewa Siwicka, et al. 2018. <span>“Managing Forests for Global and Local Ecosystem Services: A Case Study of Carbon, Water and Livelihoods from Eastern Indonesia.”</span> <em>Ecosystem Services</em> 31: 153–68.
 </div>
 <div id="ref-ember" class="csl-entry" role="listitem">
 Lolla, Aditya, and Muyi Yang. 2021. <span>“Indonesia: Indonesia Defies Global Trend with More Coal in the Generation-Mix.”</span> ember-climate; Global Electricity Review 2021: G20 profile.
@@ -418,6 +453,9 @@ Sabzevar, Nikoo, S. T. Enns, Joule Bergerson, and Janne Kettunen. 2017. <span>�
 <div id="ref-quant" class="csl-entry" role="listitem">
 Sargent, Thomas J., and John Stachurski. n.d. <span>“Intermediate Quantitative Economics with Python.”</span> quantecon.org.
 </div>
+<div id="ref-shin" class="csl-entry" role="listitem">
+Shinbrot, Xoco A., Ignacia Holmes, Madeleine Gauthier, Petra Tschakert, Zoë Wilkins, Lydia Baragón, Berta Opúa, and Catherine Potvin. 2022. <span>“Natural and Financial Impacts of Payments for Forest Carbon Offset: A 14 Year-Long Case Study in an Indigenous Community in Panama.”</span> <em>Land Use Policy</em> 115. <a href="https://doi.org/10.1016/j.landusepol.2022.106047">https://doi.org/10.1016/j.landusepol.2022.106047</a>.
+</div>
 <div id="ref-jrc" class="csl-entry" role="listitem">
 Steen, M. 2001. <span>“Greenhouse Gas Emissions from Fossil Fuel Fired Power Generation Systems.”</span> JRC21207. JRC Publications Repository. <a href="https://publications.jrc.ec.europa.eu/repository/handle/JRC21207">https://publications.jrc.ec.europa.eu/repository/handle/JRC21207</a>.
 </div>
@@ -438,14 +476,14 @@ Wahyuni, Elisa. 2022. <span>“Challenges in Facing Indonesia’s Energy Commitm
   author = {Gupta, Krisna},
   title = {Greening the Grid: {The} Implication of Aggressive Emission
     Target on {Indonesian} Electricity Generation},
-  date = {2023-11-06},
+  date = {2023-11-07},
   langid = {en},
   abstract = {Motivation, objective, method, results, implications.}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-gupta2023" class="csl-entry quarto-appendix-citeas" role="listitem">
 Gupta, Krisna. 2023. <span>“Greening the Grid: The Implication of
 Aggressive Emission Target on Indonesian Electricity Generation.”</span>
-Working Paper. November 6, 2023.
+Working Paper. November 7, 2023.
 </div></div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -15,5 +15,5 @@ format:
     html-math-method: katex
   pdf:
     documentclass: article
-  docx:
-    reference-doc: custom-reference-doc.docx
+#  docx:
+#    reference-doc: custom-reference-doc.docx
