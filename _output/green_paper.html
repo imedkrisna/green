@@ -9,7 +9,7 @@
 <meta name="author" content="Krisna Gupta">
 <meta name="dcterms.date" content="2023-11-07">
 
-<title>Discussing the implication of the aggressive emission target on the Indonesian electricity generation</title>
+<title>The implication of the aggressive emission target on the Indonesian electricity sector</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -63,12 +63,12 @@ div.csl-indent {
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="green_paper.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="green_paper.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="green_paper.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Discussing the implication of the aggressive emission target on the Indonesian electricity generation</h1>
+<h1 class="title">The implication of the aggressive emission target on the Indonesian electricity sector</h1>
 </div>
 
 
@@ -104,36 +104,21 @@ div.csl-indent {
 <div>
   <div class="abstract">
     <div class="abstract-title">Abstract</div>
-    <p>Motivation, objective, method, results, implications.</p>
+    <p>The pledge to reduce emission has reached a new height globally, and Indonesia is no exception. According to Indonesia’s latest NDCs, it vowed to reduce emission by 31.9% to 43.2%. One of the key for Indonesia to reduce its emission is electrification, which makes greening the grid a priority for the Indonesian government. However, Indonesia has been relying heavily on coal while the growth of renewable is slow. A linear optimization technique show that cleaning the indonesian electricity sector from coal leads to a potential increase in cost by 37%. The key to reduce this cost increase is by enabling the Indonesian independent power producers, which grow their electricity generation much faster than the state owned company. The government must improve the efficiency of procurement, improve its pricing, and forego local content requirements, if it wants to achieve its emission target.</p>
   </div>
 </div>
 
 </header>
 
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This is a work-in-progress. Be careful when citing. I plan to send it <a href="https://onlinelibrary.wiley.com/journal/14678411">here</a> or <a href="https://journal.uii.ac.id/index.php/JEP">here</a></p>
-</div>
-</div>
 <section id="introduction" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
 <p>The importance to ramp up efforts to decarbonize Indonesian energy sector just reached a new height.The Indonesian government joined the global bandwagon of committing to a more emission reduction target. Just before the 27<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi></mi><mi>t</mi></msup><mi>h</mi></mrow><annotation encoding="application/x-tex">^th</annotation></semantics></math> session of the Conference of the PRties (COP27), The Indonesian government comitted to a more aggresive reduction of greenhouse gas (GHG) emission by 31.90% by 2030, or by 43.20% with the help of other countries <span class="citation" data-cites="budy">(<a href="#ref-budy" role="doc-biblioref">Resosudarmo, Rezki, and Effendi 2023</a>)</span>.</p>
 <p>For the energy sector, the Indonesian government pledged to reduce the emission from energy sector by 12.5% or by 15.5% with the global help. Energy sector remains an important emitter of GHG in Indonesia. While the target is not as aggresive as the forestry and land use sector, the energy sector is going to account for 58.17% of the total emission in 2030 under the business as usual (BAU) projection <span class="citation" data-cites="budy">(<a href="#ref-budy" role="doc-biblioref">Resosudarmo, Rezki, and Effendi 2023</a>)</span>.</p>
 <p>In the energy sector, electricity generation will play an even greater role going forward. The latest data suggests the Indonesian electricity sector to provide around 20% of the Indonesian total energy needs <span class="citation" data-cites="wahyuni moef">(<a href="#ref-wahyuni" role="doc-biblioref">Wahyuni 2022</a>; <a href="#ref-moef" role="doc-biblioref">MoEF 2021</a>)</span>. This share, however, will increase as the Indonesia nudge toward electrification of cooking and transportation <span class="citation" data-cites="budy">(<a href="#ref-budy" role="doc-biblioref">Resosudarmo, Rezki, and Effendi 2023</a>)</span>. Meanwhile, the Indonesian electricity sector aimed to have zero emission by 2040, far quicker than energy and other sectors in general [<span class="citation" data-cites="ember1">Edianto (<a href="#ref-ember1" role="doc-biblioref">2022</a>)</span>;iea]. Greening the Indonesian grid, therefore, become one of the most important challenge the Indonesian government must met to achieve the emission target <span class="citation" data-cites="paul2 budy iea ember1">(<a href="#ref-paul2" role="doc-biblioref">Burke et al. 2019</a>; <a href="#ref-budy" role="doc-biblioref">Resosudarmo, Rezki, and Effendi 2023</a>; <a href="#ref-iea" role="doc-biblioref">IEA 2022</a>; <a href="#ref-ember1" role="doc-biblioref">Edianto 2022</a>)</span>.</p>
-<iframe src="https://ourworldindata.org/grapher/energy-consumption-by-source-and-country?stackMode=absolute&amp;country=~IDN" loading="lazy" style="width: 100%; height: 600px; border: 0px none;">
-</iframe>
-<iframe src="https://ourworldindata.org/grapher/share-elec-by-source?country=~IDN" loading="lazy" style="width: 100%; height: 600px; border: 0px none;">
-</iframe>
 <p>This paper aims to discuss the cost of the Indonesian electricity transition toward renewable under the government’s aggressive emission target. Linear optimization assume perfect substitution with constraints is chosen as the preferred method to project the cost of electricity. Linear optimization is suitable for a perfect substitution grid <span class="citation" data-cites="cowell quant">(<a href="#ref-cowell" role="doc-biblioref">Cowell 2006</a>; <a href="#ref-quant" role="doc-biblioref">Sargent and Stachurski, n.d.</a>)</span>. Moreover, the method is simple enough to replicate and provides a useful to make projection and plans given a proper parameterization and constraints.</p>
-<p>findings and its implications</p>
+<p>Results suggests that the Indonesian government will be able to reach its NDC targets without and additional cost to the consumer. This is true as long as Indonesia cover the larger cost of renewables by replacing other fossil fuel source with coal. A grid without coal, as envisioned by the Indonesian government in 2040 <span class="citation" data-cites="ember1 memr2">(<a href="#ref-ember1" role="doc-biblioref">Edianto 2022</a>; <a href="#ref-memr2" role="doc-biblioref">MEMR 2020a</a>)</span>, would increase the cost of electricity by 37%, a non-trivial increase. This increase must be abated by either a significant reduction of renewable prices, or a subsidy.</p>
+<p>Further discussion is made on the viability of this transition. The most promising renewable in Indonesia so far is solar PV. However, the adoption speed is hindered by incompetent bureaucrats and local content requirement imposed on government projects. Also discussed is the role a newly regulated carbon market in Indonesia. This is, however, also have its own challenges.</p>
+<p>Enabling the growth of Independent Power Producers (IPP) is key since their renewable growth far outpaced the state owned electricity company. The government must improve its bureaucratic efficiency so procurements can be conducted much faster with a better certainty. Electricity price needs to be made more flexible to cater for niche off-grid consumers. Lastly, nudging local industries with local content requirement hinders the adoption rate of renewables, and one has to give.</p>
 <p>The next section discusses the literature around the new emission target and Indonesia’s electricity sector. Section 3 explains the method of choice. Section 4 discusses the results and its implications toward greening the grid, and section 5 concludes.</p>
 </section>
 <section id="indonesia-electricity-outlook" class="level2" data-number="2">
@@ -186,7 +171,6 @@ Warning
 <p>A pilot project in 2021 results an average carbon price of 2 USD per tonne of carbon dioxide and a proposed a 30 IDR/kgCO2 carbon tax <span class="citation" data-cites="cnbc">(<a href="#ref-cnbc" role="doc-biblioref">Putri 2022</a>)</span>. This pricing translates to around an extra 0.6 IDR/KWh addition to electricity price. The official ETS market was implemented on September 2023 by IDXCarbon. The Resulting price was around 63 IDR/kgCO2 <span class="citation" data-cites="cnbc2">Wiku (<a href="#ref-solum" role="doc-biblioref">2023</a>)</span>, which translated roughly to 1.2 IDR/KWh. For comparison, The Chinese ETS resulted in around 5 USD per tonne of carbon dioxide, while the price of carbon in the European Union (EU) ETS is 96 USD in 2023 <span class="citation" data-cites="wb">(<a href="#ref-wb" role="doc-biblioref">Bank 2023</a>)</span>.</p>
 <p>The government plans to reduce the carbon-cap every year. In a perfectly functioning carbon market, The cap reduction will reduce the carbon-cap available to buy, which will push carbon price (and consequently the carbon tax) upwards. If the carbon price is high enough, it will incentive firms to either invest in green energy, reduce its energy consumption altogether, or pay the taxes under the high ETS price. The latter would help the government finance the desired investment in green energy.</p>
 <p>Indonesia electricity consumption is only a quarter of the world average <span class="citation" data-cites="paul1">(<a href="#ref-paul1" role="doc-biblioref">Burke and Kurniawati 2018</a>)</span>, many of them are poor<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. As Indonesia aspires to grow faster, the consumption of electricity needs to increase. A low carbon quota and an electricity price that’s too high may discourage access to electricity and increase inequality <span class="citation" data-cites="pearse">(<a href="#ref-pearse" role="doc-biblioref">Pearse and Bohm 2015</a>)</span>. According to a simulation by <span class="citation" data-cites="yuve">Effendi and Resosudarmo (<a href="#ref-yuve" role="doc-biblioref">202AD</a>)</span>, developing renewable electricity may increase poverty incidence in Indonesia by 10-13 percentage points.</p>
-<p>Problems of ETS <span class="citation" data-cites="pearse">Pearse and Bohm (<a href="#ref-pearse" role="doc-biblioref">2015</a>)</span></p>
 </section>
 <section id="simulation" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="simulation"><span class="header-section-number">3</span> Simulation</h2>
@@ -236,7 +220,7 @@ aw_a+bw_b+gw_g=\varepsilon
 <p>The carbon tax scenario is the case 3. The 50 IDR/kgCO2 is imposed as a carbon tax. This tax is extremely low, however, which translates to 0.6 IDR/KWh. Since the price of electricity in 2023 is around 1,400 IDR/KWh, the proposed carbon tax is extremely trivial. To show an actual impact of the carbon tax, a carbon tax equivalent to 50% of the electricity price is imposed on coal.</p>
 <p>Case 4 and 5 poses restrictions on the total emission generated. The goal from CM1 and CM2 in the NDCs is implemented on the model. That is, case 4 and 5 imposes a restriction on total emission to be 12.5% and 15.5% lower than case 2 respectively. The goal of these exercise is to show how much more expensive electricity is under these scenarios, on top of the cost to make the switch in the first place.</p>
 <p>Next, we would like to know how much the cost and emission generated under the government’s plan for the PLN. According to <span class="citation" data-cites="memr2">MEMR (<a href="#ref-memr2" role="doc-biblioref">2020a</a>)</span>, Indonesia will have 52% of its electricity to be sourced from renewables. Case 6 tests this scenario by limiting the lower bound of renewable electricity use by 52% and see how much emission it reduce and how much will it will cost to operate this distribution of electricity source.</p>
-<p>The last 2 cases demonstrate the situation when Indonesia has successfully implemented its strategy as explained by <span class="citation" data-cites="ember2">(<a href="#ref-ember2" role="doc-biblioref"><strong>ember2?</strong></a>)</span>. That is, case 7 shows the situation when Indonesia is successfully reduced the use of coal to 0%, while case 8 shows the situation when Indonesia implements 100% renewable electricity, as projected by 2040 and 2050 respectivel <span class="citation" data-cites="ember2">(<a href="#ref-ember2" role="doc-biblioref"><strong>ember2?</strong></a>)</span>. Case 7 is implemented by restricting the upper bound of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>w</mi><mi>b</mi></msub><annotation encoding="application/x-tex">w_b</annotation></semantics></math> by 0, while case 8 bounds electricy by 100%.</p>
+<p>The last 2 cases demonstrate the situation when Indonesia has successfully implemented its strategy as explained by <span class="citation" data-cites="ember1">Edianto (<a href="#ref-ember1" role="doc-biblioref">2022</a>)</span>. That is, case 7 shows the situation when Indonesia is successfully reduced the use of coal to 0%, while case 8 shows the situation when Indonesia implements 100% renewable electricity, as projected by 2040 and 2050 respectively <span class="citation" data-cites="ember1">(<a href="#ref-ember1" role="doc-biblioref">Edianto 2022</a>)</span>. Case 7 is implemented by restricting the upper bound of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>w</mi><mi>b</mi></msub><annotation encoding="application/x-tex">w_b</annotation></semantics></math> by 0, while case 8 bounds electricy by 100%.</p>
 <p>All of these cases are summarized in <a href="#tbl-scenarios">Table&nbsp;2</a>. These 8 cases are exercised as a benchmark for possible emission and cost of the Indonesian electricity generation. Moreover, these 8 cases also show the flexibility of the model in projecting cases by altering different exogenous variables. These exercises provides a good comparative static which will be discussed in the next section.</p>
 <div id="tbl-scenarios" class="anchored">
 <table class="table-hover table-striped table">
@@ -390,10 +374,15 @@ Total electricity by other fossil fuels is 0.00 MWh (0.00 %)</code></pre>
 <p>However, the bottleneck may come from non-monetary cost. for example, land rights can be a constraint as well. Securing land rights has already become a problem for geothermal <span class="citation" data-cites="paul1">(<a href="#ref-paul1" role="doc-biblioref">Burke and Kurniawati 2018</a>)</span>. If solar PV and wind has reached a certain level, land rights may potentially be a bottleneck. While cost per KWh has been an important indicator for planning electricity generation, how much area is needed per KWh may need to be considered as well.</p>
 <p>Additionally, administrative cost can also be a hindrance. It has been well known that the Indonesian government’s procurement of solar PV projects has been slow and uncertain <span class="citation" data-cites="paul2 iesr">(<a href="#ref-paul2" role="doc-biblioref">Burke et al. 2019</a>; <a href="#ref-iesr" role="doc-biblioref">IESR 2022</a>)</span>. Additionally, the local content requirement (LCR) imposed on the government’s solar PV projects is also cited as a major bottleneck <span class="citation" data-cites="iesr">(<a href="#ref-iesr" role="doc-biblioref">IESR 2022</a>)</span>. While LCR for solar PV is imposed to help local manufacturing, it runs counter to the emission reduction targets.</p>
 <p>Can the carbon tax and the ETS system helps with financing? According to <span class="citation" data-cites="pearse">Pearse and Bohm (<a href="#ref-pearse" role="doc-biblioref">2015</a>)</span>, ETS has often proved to be unsuccessful in reducing emission. While ETS often modeled by the assumption of a perfectly functioning market, it is often not the case. ETS is prone to political intervention by firms and the government often unable to correctly punish over-polluters. In the early implementation of the EU ETS, carbon price leads to 0 amid a quota oversupply <span class="citation" data-cites="pearse">(<a href="#ref-pearse" role="doc-biblioref">Pearse and Bohm 2015</a>)</span>. The jury is still out for Indonesia, but looking at various corruption cases in import quota license in trade in goods <span class="citation" data-cites="amanta gupta2">(<a href="#ref-amanta" role="doc-biblioref">Amanta 2021</a>; <a href="#ref-gupta2" role="doc-biblioref">Gupta, Pane, and Pasaribu 2022</a>)</span>, it is not promising.</p>
+<p>There are trade-off the government is facing. First is the cost-emission trade-off. If renewable can scale very quickly, then retiring coal-based power plant may be delayed, or even desirable since it helps with lowering the cost. The incredible growth of IPP in the renewable electricity must be facilitated with more efficient bureaucracy and better certainties for solar PV projects. Lastly, the government may need to forego the LCR rule on solar PV, if it wants to reach the renewable goal as soon as possible.</p>
 <p>It is also important to note the think of this results in the broader scheme of emission reduction. The largest emission reduction according to the Indonesian NDCs will come from the agriculture, forestry and land use sector. So far, forestry and land use in Indonesia has covered by the REDD+ scheme under a limited success <span class="citation" data-cites="hermawan indrajaya kim">(<a href="#ref-hermawan" role="doc-biblioref">Hermawan, Karim, and Rethel 2023</a>; <a href="#ref-indrajaya" role="doc-biblioref">Indrajaya et al. 2016</a>; <a href="#ref-kim" role="doc-biblioref">Kim et al. 2018</a>)</span>. The success of a program like REDD+ relies on various issues like governance and evaluation<span class="citation" data-cites="pearse">(<a href="#ref-pearse" role="doc-biblioref">Pearse and Bohm 2015</a>)</span>, which still need a lot of work, especially for the Indonesian government. <span class="citation" data-cites="shin goncalves goldstein">(<a href="#ref-shin" role="doc-biblioref">Shinbrot et al. 2022</a>; <a href="#ref-goncalves" role="doc-biblioref">Gonçalves 2022</a>; <a href="#ref-goldstein" role="doc-biblioref">Goldstein 2021</a>)</span>. If sectors outside of energy do not progress as expected, then the energy sector may have to pick up the pace.</p>
 </section>
 <section id="conclusion" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">5</span> Conclusion</h2>
+<p>The Indonesian government latest NDCs shows a confident emission target. The Indonesian electricity sector is targeted to reduce emission by 12.5% by its own effort or 15.5% with the help of the international community. To achieve this, the Indonesian government vow to increase its share of renewable electricity up to 52% in 2030, free its electricity grid from coal by 2040, and become fully renewable in 2050. Considering how important electrification of energy in the Indonesian net-zero strategy, greening the grid become extremely crucial.</p>
+<p>Using an linear optimization technique, it is shown that freeing the grid from coal would cost the Indonesian electricity consumer with 37% higher electricity tariff. This increase will really hurt Indonesian electricity consumption which already very low in international standard. On the other hand, to ensure an affordable electricity, Indonesia should keep its coal.</p>
+<p>One option to compensate the increase in electricity price is to smoothen the price increase by providing a subsidy or increase the price discriminately. This would add more financial burden on top of the necessary 3,500 Trillion IDR to green the grid. Carbon tax and ETS can be one way to earn such funding. But judging from problems faced by other countries, it may left to be desired.</p>
+<p>The other option is to keep the progressive reduction of solar PV’s LCOE. The Indonesian independent power supplier already greening much faster than the PLN. The Indonesian government must keep up the momentum by facilitating them. Organize a better, more efficient procurement and purchasing agreement. Uncertainty must be reduced, especially in the contract design and land acquisition. Consider foregoing LCR, since the goal toward zero emission may be more important than supporting indigeneous solar PV industry.</p>
 </section>
 <section id="bibliography" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="bibliography">Bibliography</h2>
@@ -507,16 +496,29 @@ Wiku. 2023. <span>“Perusahaan Pembeli Unit Karbon Pertama Di Indonesia.”</sp
 </ol>
 </section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{gupta2023,
   author = {Gupta, Krisna},
-  title = {Discussing the Implication of the Aggressive Emission Target
-    on the {Indonesian} Electricity Generation},
+  title = {The Implication of the Aggressive Emission Target on the
+    {Indonesian} Electricity Sector},
   date = {2023-11-07},
   langid = {en},
-  abstract = {Motivation, objective, method, results, implications.}
+  abstract = {The pledge to reduce emission has reached a new height
+    globally, and Indonesia is no exception. According to Indonesia’s
+    latest NDCs, it vowed to reduce emission by 31.9\% to 43.2\%. One of
+    the key for Indonesia to reduce its emission is electrification,
+    which makes greening the grid a priority for the Indonesian
+    government. However, Indonesia has been relying heavily on coal
+    while the growth of renewable is slow. A linear optimization
+    technique show that cleaning the indonesian electricity sector from
+    coal leads to a potential increase in cost by 37\%. The key to
+    reduce this cost increase is by enabling the Indonesian independent
+    power producers, which grow their electricity generation much faster
+    than the state owned company. The government must improve the
+    efficiency of procurement, improve its pricing, and forego local
+    content requirements, if it wants to achieve its emission target.}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-gupta2023" class="csl-entry quarto-appendix-citeas" role="listitem">
-Gupta, Krisna. 2023. <span>“Discussing the Implication of the Aggressive
-Emission Target on the Indonesian Electricity Generation.”</span>
-Working Paper. November 7, 2023.
+Gupta, Krisna. 2023. <span>“The Implication of the Aggressive Emission
+Target on the Indonesian Electricity Sector.”</span> Working Paper.
+November 7, 2023.
 </div></div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">

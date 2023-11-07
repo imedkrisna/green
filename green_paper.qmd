@@ -1,5 +1,5 @@
 ---
-title: "Discussing the implication of the aggressive emission target on the Indonesian electricity sector"
+title: "The implication of the aggressive emission target on the Indonesian electricity sector"
 author:
   - name: Krisna Gupta
     id: kg
@@ -10,7 +10,7 @@ author:
         city: Jakarta
         url: www.poltekapp.ac.id
 abstract: > 
-  Motivation, objective, method, results, implications.
+  The pledge to reduce emission has reached a new height globally, and Indonesia is no exception. According to Indonesia's latest NDCs, it vowed to reduce emission by 31.9% to 43.2%. One of the key for Indonesia to reduce its emission is electrification, which makes greening the grid a priority for the Indonesian government. However, Indonesia has been relying heavily on coal while the growth of renewable is slow. A linear optimization technique show that cleaning the indonesian electricity sector from coal leads to a potential increase in cost by 37%. The key to reduce this cost increase is by enabling the Indonesian independent power producers, which grow their electricity generation much faster than the state owned company. The government must improve the efficiency of procurement, improve its pricing, and forego local content requirements, if it wants to achieve its emission target.
 citation: 
   container-title: Working paper
 #  volume:  
@@ -36,10 +36,6 @@ format:
     number-sections: true
 ---
 
-::: {.callout-warning}
-This is a work-in-progress. Be careful when citing. I plan to send it [here](https://onlinelibrary.wiley.com/journal/14678411) or  [here](https://journal.uii.ac.id/index.php/JEP)
-:::
-
 ## Introduction
 
 The importance to ramp up efforts to decarbonize Indonesian energy sector just reached a new height.The Indonesian government joined the global bandwagon of committing to a more emission reduction target. Just before the 27$^th$ session of the Conference of the PRties (COP27), The Indonesian government comitted to a more aggresive reduction of greenhouse gas (GHG) emission by 31.90% by 2030, or by 43.20% with the help of other countries [@budy].
@@ -48,13 +44,13 @@ For the energy sector, the Indonesian government pledged to reduce the emission 
 
 In the energy sector, electricity generation will play an even greater role going forward. The latest data suggests the Indonesian electricity sector to provide around 20% of the Indonesian total energy needs [@wahyuni;@moef]. This share, however, will increase as the Indonesia nudge toward electrification of cooking and transportation [@budy]. Meanwhile, the Indonesian electricity sector aimed to have zero emission by 2040, far quicker than energy and other sectors in general [@ember1;iea]. Greening the Indonesian grid, therefore, become one of the most important challenge the Indonesian government must met to achieve the emission target [@paul2;@budy;@iea;@ember1].
 
-<iframe src="https://ourworldindata.org/grapher/energy-consumption-by-source-and-country?stackMode=absolute&country=~IDN" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
-
-<iframe src="https://ourworldindata.org/grapher/share-elec-by-source?country=~IDN" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
-
 This paper aims to discuss the cost of the Indonesian electricity transition toward renewable under the government's aggressive emission target. Linear optimization assume perfect substitution with constraints is chosen as the preferred method to project the cost of electricity. Linear optimization is suitable for a perfect substitution grid [@cowell;@quant]. Moreover, the method is simple enough to replicate and provides a useful to make projection and plans given a proper parameterization and constraints.
 
-findings and its implications
+Results suggests that the Indonesian government will be able to reach its NDC targets without and additional cost to the consumer. This is true as long as Indonesia cover the larger cost of renewables by replacing other fossil fuel source with coal. A grid without coal, as envisioned by the Indonesian government in 2040 [@ember1;@memr2], would increase the cost of electricity by 37%, a non-trivial increase. This increase must be abated by either a significant reduction of renewable prices, or a subsidy.
+
+Further discussion is made on the viability of this transition. The most promising renewable in Indonesia so far is solar PV. However, the adoption speed is hindered by incompetent bureaucrats and local content requirement imposed on government projects. Also discussed is the role a newly regulated carbon market in Indonesia. This is, however, also have its own challenges.
+
+Enabling the growth of Independent Power Producers (IPP) is key since their renewable growth far outpaced the state owned electricity company. The government must improve its bureaucratic efficiency so procurements can be conducted much faster with a better certainty. Electricity price needs to be made more flexible to cater for niche off-grid consumers. Lastly, nudging local industries with local content requirement hinders the adoption rate of renewables, and one has to give.
 
 The next section discusses the literature around the new emission target and Indonesia's electricity sector. Section 3 explains the method of choice. Section 4 discusses the results and its implications toward greening the grid, and section 5 concludes.
 
@@ -96,8 +92,6 @@ A pilot project in 2021 results an average carbon price of 2 USD per tonne of ca
 The government plans to reduce the carbon-cap every year. In a perfectly functioning carbon market, The cap reduction will reduce the carbon-cap available to buy, which will push carbon price (and consequently the carbon tax) upwards. If the carbon price is high enough, it will incentive firms to either invest in green energy, reduce its energy consumption altogether, or pay the taxes under the high ETS price. The latter would help the government finance the desired investment in green energy.
 
 Indonesia electricity consumption is only a quarter of the world average [@paul1], many of them are poor[^2]. As Indonesia aspires to grow faster, the consumption of electricity needs to increase. A low carbon quota and an electricity price that's too high may discourage access to electricity and increase inequality [@pearse]. According to a simulation by @yuve, developing renewable electricity may increase poverty incidence in Indonesia by 10-13 percentage points.
-
-Problems of ETS @pearse
 
 ## Simulation
 
@@ -167,7 +161,7 @@ Case 4 and 5 poses restrictions on the total emission generated. The goal from C
 
 Next, we would like to know how much the cost and emission generated under the government's plan for the PLN. According to @memr2, Indonesia will have 52% of its electricity to be sourced from renewables. Case 6 tests this scenario by limiting the lower bound of renewable electricity use by 52% and see how much emission it reduce and how much will it will cost to operate this distribution of electricity source.
 
-The last 2 cases demonstrate the situation when Indonesia has successfully implemented its strategy as explained by @ember2. That is, case 7 shows the situation when Indonesia is successfully reduced the use of coal to 0%, while case 8 shows the situation when Indonesia implements 100% renewable electricity, as projected by 2040 and 2050 respectivel [@ember2]. Case 7 is implemented by restricting the upper bound of $w_b$ by 0, while case 8 bounds electricy by 100%.
+The last 2 cases demonstrate the situation when Indonesia has successfully implemented its strategy as explained by @ember1. That is, case 7 shows the situation when Indonesia is successfully reduced the use of coal to 0%, while case 8 shows the situation when Indonesia implements 100% renewable electricity, as projected by 2040 and 2050 respectively [@ember1]. Case 7 is implemented by restricting the upper bound of $w_b$ by 0, while case 8 bounds electricy by 100%.
 
 All of these cases are summarized in @tbl-scenarios. These 8 cases are exercised as a benchmark for possible emission and cost of the Indonesian electricity generation. Moreover, these 8 cases also show the flexibility of the model in projecting cases by altering different exogenous variables. These exercises provides a good comparative static which will be discussed in the next section.
 
@@ -379,11 +373,19 @@ Additionally, administrative cost can also be a hindrance. It has been well know
 
 Can the carbon tax and the ETS system helps with financing? According to @pearse, ETS has often proved to be unsuccessful in reducing emission. While ETS often modeled by the assumption of a perfectly functioning market, it is often not the case. ETS is prone to political intervention by firms and the government often unable to correctly punish over-polluters. In the early implementation of the EU ETS, carbon price leads to 0 amid a quota oversupply [@pearse]. The jury is still out for Indonesia, but looking at various corruption cases in import quota license in trade in goods [@amanta;@gupta2], it is not promising.
 
+There are trade-off the government is facing. First is the cost-emission trade-off. If renewable can scale very quickly, then retiring coal-based power plant may be delayed, or even desirable since it helps with lowering the cost. The incredible growth of IPP in the renewable electricity must be facilitated with more efficient bureaucracy and better certainties for solar PV projects. Lastly, the government may need to forego the LCR rule on solar PV, if it wants to reach the renewable goal as soon as possible.
+
 It is also important to note the think of this results in the broader scheme of emission reduction. The largest emission reduction according to the Indonesian NDCs will come from the agriculture, forestry and land use sector. So far, forestry and land use in Indonesia has covered by the REDD+ scheme under a limited success [@hermawan;@indrajaya;@kim]. The success of a program like REDD+ relies on various issues like governance and evaluation[@pearse], which still need a lot of work, especially for the Indonesian government. [@shin;@goncalves;@goldstein]. If sectors outside of energy do not progress as expected, then the energy sector may have to pick up the pace.
 
 ## Conclusion
 
+The Indonesian government latest NDCs shows a confident emission target. The Indonesian electricity sector is targeted to reduce emission by 12.5% by its own effort or 15.5% with the help of the international community. To achieve this, the Indonesian government vow to increase its share of renewable electricity up to 52% in 2030, free its electricity grid from coal by 2040, and become fully renewable in 2050. Considering how important electrification of energy in the Indonesian net-zero strategy, greening the grid become extremely crucial.
 
+Using an linear optimization technique, it is shown that freeing the grid from coal would cost the Indonesian electricity consumer with 37% higher electricity tariff. This increase will really hurt Indonesian electricity consumption which already very low in international standard. On the other hand, to ensure an affordable electricity, Indonesia should keep its coal.
+
+One option to compensate the increase in electricity price is to smoothen the price increase by providing a subsidy or increase the price discriminately. This would add more financial burden on top of the necessary 3,500 Trillion IDR to green the grid. Carbon tax and ETS can be one way to earn such funding. But judging from problems faced by other countries, it may left to be desired.
+
+The other option is to keep the progressive reduction of solar PV's LCOE. The Indonesian independent power supplier already greening much faster than the PLN. The Indonesian government must keep up the momentum by facilitating them. Organize a better, more efficient procurement and purchasing agreement. Uncertainty must be reduced, especially in the contract design and land acquisition. Consider foregoing LCR, since the goal toward zero emission may be more important than supporting indigeneous solar PV industry.
 
 ## Bibliography {.unnumbered}
 

@@ -1,0 +1,33 @@
+---
+title: "Greening the grid and what it takes"
+subtitle: "Seminar Nasional Politeknik APP Jakarta 2023"
+author: "Krisna Gupta"
+date: "23 November 2023"
+format: 
+  pptx:
+    theme: [simple,mytheme.scss]
+  revealjs:
+    theme: [simple,mytheme.scss]
+    chalkboard: true
+    incremental: false
+    transition: convex
+    background-transition: fade
+    slide-number: true
+
+---
+
+## About the author
+
+awkoakowako
+
+---
+
+<iframe src="https://ourworldindata.org/grapher/energy-consumption-by-source-and-country?stackMode=absolute&country=~IDN" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+
+---
+
+<iframe src="https://ourworldindata.org/grapher/share-elec-by-source?country=~IDN" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+
+## wkwkkw
+
+oawkoakwoakowa
