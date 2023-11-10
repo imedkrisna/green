@@ -30,7 +30,26 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -341,9 +360,41 @@ Krisna Gupta
 
   <p class="date">November 23, 2023</p>
 </section>
-<section id="about-the-author" class="slide level2" data-number="1">
-<h2><span class="header-section-number">1</span> About the author</h2>
-<p>awkoakowako</p>
+<section id="today" class="slide level2">
+<h2>Today</h2>
+<ul>
+<li><p>The recent development</p></li>
+<li><p>Model setting</p></li>
+<li><p>Results &amp; discussions</p></li>
+<li><p>conclusions</p></li>
+</ul>
+</section>
+<section id="about-me" class="slide level2">
+<h2>About me</h2>
+<ul>
+<li></li>
+</ul>
+</section>
+<section id="introduction" class="slide level2">
+<h2>Introduction</h2>
+<ul>
+<li><p>Indonesia recent NDCs vow to reduce emissions by 31.9% (CM1) and 43.2% (CM2)<sup>1</sup> in 2030, net-zero emission (NZE) in 2050.</p></li>
+<li><p>From those, energy emission must reduced by 12.5% and 15.5% respectively.</p></li>
+<li><p>Electrification is central to the Indonesian effort toward the climate goals:</p>
+<ul>
+<li>EVs, induction stove.</li>
+</ul></li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>CM1 = Counter Measure 1 (without international support), while CM2 = counter measure 2 (with international support).</p></li></ol></aside></section>
+<section class="slide level2">
+
+<iframe src="https://ourworldindata.org/grapher/electricity-generation?tab=chart&amp;country=IDN~MYS~THA~VNM" loading="lazy" style="width: 100%; height: 600px; border: 0px none;">
+</iframe>
+</section>
+<section class="slide level2">
+
+<iframe src="https://ourworldindata.org/grapher/per-capita-electricity-generation?tab=chart&amp;country=IDN~VNM~MYS~THA~IND" loading="lazy" style="width: 100%; height: 600px; border: 0px none;">
+</iframe>
 </section>
 <section class="slide level2">
 
@@ -355,13 +406,226 @@ Krisna Gupta
 <iframe src="https://ourworldindata.org/grapher/share-elec-by-source?country=~IDN" loading="lazy" style="width: 100%; height: 600px; border: 0px none;">
 </iframe>
 </section>
-<section id="wkwkkw" class="slide level2" data-number="2">
-<h2><span class="header-section-number">2</span> wkwkkw</h2>
-<p>oawkoakwoakowa</p>
+<section id="the-outlook" class="slide level2">
+<h2>The outlook</h2>
+</section>
+<section id="model-setting" class="slide level2">
+<h2>Model setting</h2>
+<p><span class="m">Let <span class="math inline">\(p \cdot w\)</span> be a total cost of generating electricity (in Watt hour) from 3 sources: clean <span class="math inline">\((w_a)\)</span>, coal <span class="math inline">\((w_b)\)</span>, and less carbon-y fossil fuels <span class="math inline">\((w_g)\)</span></span></p>
+<p><span class="m">We add emission constraint to this standard cost minimization problem with <span class="math inline">\(a,b,g=\)</span> emission factor of its respective energy source</span></p>
+<p><span class="m">We then get a completely linear system:</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\min_{W} \ &amp;  p \cdot w \\
+\mbox{subject to } \ &amp; w_a+ w_b+ w_g \ge \omega \\
+&amp; aw_a+bw_b+gw_g \le \varepsilon \\
+&amp; w_a,w_b,w_g \ge 0\\
+\end{aligned}
+\]</span></p>
+</section>
+<section id="model-setting-1" class="slide level2">
+<h2>Model setting</h2>
+<ul>
+<li><p>Cost optimization allows for a compensating variation calculatin <span class="citation" data-cites="cowell">(<a href="#/bibliography" role="doc-biblioref" onclick="">Cowell 2006</a>)</span>.</p></li>
+<li><p>Perfect substitution have important implications:</p>
+<ul>
+<li><p>Perfect changes in electricity mix reflects a longer run scenario.</p></li>
+<li><p>The cost of substitution isn’t reflected by the model.</p></li>
+<li><p>Short-run constraint can be modeled by setting boundaries on the possible solution.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="parameterization" class="slide level2">
+<h2>Parameterization</h2>
+<ul>
+<li><p>Electricity price from <span class="citation" data-cites="pln">PLN (<a href="#/bibliography" role="doc-biblioref" onclick="">2021</a>)</span> where <span class="math inline">\(p_g \approx p_a \approx 2p_b\)</span></p></li>
+<li><p><span class="math inline">\(\omega\)</span> from <span class="citation" data-cites="pln">PLN (<a href="#/bibliography" role="doc-biblioref" onclick="">2021</a>)</span>, but the share is from <span class="citation" data-cites="ember">Lolla and Yang (<a href="#/bibliography" role="doc-biblioref" onclick="">2021</a>)</span>.</p></li>
+<li><p>Emission factor is calibrated from <span class="citation" data-cites="febijanto">(<a href="#/bibliography" role="doc-biblioref" onclick=""><strong>febijanto?</strong></a>)</span> and <span class="citation" data-cites="jrc">Steen (<a href="#/bibliography" role="doc-biblioref" onclick="">2001</a>)</span>.</p>
+<ul>
+<li>renewable has small factor from procuring solar PV.</li>
+</ul></li>
+</ul>
+</section>
+<section id="scenarios" class="slide level2 s">
+<h2>Scenarios</h2>
+<table>
+<thead>
+<tr class="header">
+<th>case</th>
+<th>description</th>
+<th>model setting</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>status quo</td>
+<td>restricting the current share of generation.</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>current emission, optimized</td>
+<td>case 1 without source restriction.</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>carbon tax</td>
+<td>Same emission limit but with a carbon tax</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>CM1</td>
+<td>same prices but a 12.5% emission reduction</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>CM2</td>
+<td>same prices but a 15.5% emission reduction</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>New RUPTL</td>
+<td>case 2 with 52% renewables</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Zero coal</td>
+<td>case 2 with 0% coal</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Fully renewable</td>
+<td>case 2 with 100% renewables</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="results" class="slide level2 s">
+<h2>Results</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>case</th>
+<th>cost (IDR/KWh)</th>
+<th>emission (TCO2)</th>
+<th>clean (%)</th>
+<th>coal (%)</th>
+<th>others (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>906.11</td>
+<td>225,208,103</td>
+<td>17</td>
+<td>60</td>
+<td>23</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>819.96</td>
+<td>225,208,103</td>
+<td>24.67</td>
+<td>75.33</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>1,071.53</td>
+<td>225,208,103</td>
+<td>24.67</td>
+<td>75.33</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>902.63</td>
+<td>190,277,276</td>
+<td>38.07</td>
+<td>61.93</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>918.07</td>
+<td>183,753,484</td>
+<td>40.58</td>
+<td>59.42</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>988.49</td>
+<td>153,998,343</td>
+<td>52</td>
+<td>48</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>1,247.93</td>
+<td>202,629,399</td>
+<td>0</td>
+<td>0</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>1,284,44</td>
+<td>28,947,057</td>
+<td>100</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="discussions" class="slide level2">
+<h2>Discussions</h2>
+<ul>
+<li><p>Corner solution toward coal corroborate Indonesia’s reliance on coal.</p></li>
+<li><p>Case 3: 50% increase in price -&gt; 18.26% total cost, trivial emission reduction.</p></li>
+<li><p>Carbon quota (CM1,CM2) increase cost less than carbon tax.</p></li>
+<li><p>0 coal <span class="math inline">\(\rightarrow\)</span> 37.72% extra cost, 100% renewable <span class="math inline">\(\rightarrow\)</span> 41.75%</p></li>
+<li><p>Note this does not account for the transition cost.</p></li>
+</ul>
+</section>
+<section id="discussions-1" class="slide level2">
+<h2>Discussions</h2>
+</section>
+<section id="conclusions" class="slide level2">
+<h2>Conclusions</h2>
+</section>
+<section id="bibliography" class="slide level2 scrollable xs smaller">
+<h2>Bibliography</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-cowell" class="csl-entry" role="listitem">
+Cowell, Frank A. 2006. <em>Microeconomics: Principles and Analysis</em>. OUP Oxford.
+</div>
+<div id="ref-ember" class="csl-entry" role="listitem">
+Lolla, Aditya, and Muyi Yang. 2021. <span>“Indonesia: Indonesia Defies Global Trend with More Coal in the Generation-Mix.”</span> ember-climate; Global Electricity Review 2021: G20 profile.
+</div>
+<div id="ref-pln" class="csl-entry" role="listitem">
+PLN. 2021. <span>“Statistik PLN.”</span> 01001-220630. Perusahaan Listrik Negara.
+</div>
+<div id="ref-jrc" class="csl-entry" role="listitem">
+Steen, M. 2001. <span>“Greenhouse Gas Emissions from Fossil Fuel Fired Power Generation Systems.”</span> JRC21207. JRC Publications Repository. <a href="https://publications.jrc.ec.europa.eu/repository/handle/JRC21207">https://publications.jrc.ec.europa.eu/repository/handle/JRC21207</a>.
+</div>
+</div>
 <div class="footer footer-default">
 
 </div>
 </section>
+
     </div>
   </div>
 

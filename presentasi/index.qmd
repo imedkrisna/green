@@ -3,9 +3,9 @@ title: "Greening the grid and what it takes"
 subtitle: "Seminar Nasional Politeknik APP Jakarta 2023"
 author: "Krisna Gupta"
 date: "23 November 2023"
+number-sections: false
+bibliography: ../references.bib
 format: 
-  pptx:
-    theme: [simple,mytheme.scss]
   revealjs:
     theme: [simple,mytheme.scss]
     chalkboard: true
@@ -16,9 +16,53 @@ format:
 
 ---
 
-## About the author
+## Today
 
-awkoakowako
+- The recent development
+
+- Model setting
+
+- Results & discussions
+
+- conclusions
+
+---
+
+## About me
+
+- 
+
+---
+
+## Introduction
+
+- Indonesia recent NDCs vow to reduce emissions by 31.9% (CM1) and 43.2% (CM2)[^1] in 2030, net-zero emission (NZE) in 2050.
+
+- From those, energy emission must reduced by 12.5% and 15.5% respectively.
+
+- Requires 3,500 Triliun rupiah to reach those shit
+
+- Financing will be a challenge.
+
+   
+    
+## Electricity
+
+- Electrification is central to the Indonesian effort toward the climate goals:
+
+    - EVs, induction stove.
+
+- access still shit
+
+- largely coal. greening is expensive
+
+---
+
+<iframe src="https://ourworldindata.org/grapher/electricity-generation?tab=chart&country=IDN~MYS~THA~VNM" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+
+---
+
+<iframe src="https://ourworldindata.org/grapher/per-capita-electricity-generation?tab=chart&country=IDN~VNM~MYS~THA~IND" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
 
 ---
 
@@ -28,6 +72,97 @@ awkoakowako
 
 <iframe src="https://ourworldindata.org/grapher/share-elec-by-source?country=~IDN" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
 
-## wkwkkw
 
-oawkoakwoakowa
+
+## The outlook
+
+
+
+
+## Model setting
+
+[Let $p \cdot w$ be a total cost of generating electricity (in Watt hour) from 3 sources: clean $(w_a)$, coal $(w_b)$, and less carbon-y fossil fuels $(w_g)$]{.m}
+
+[We add emission constraint to this standard cost minimization problem with $a,b,g=$ emission factor of its respective energy source]{.m}
+
+[We then get a completely linear system:]{.m}
+
+$$
+\begin{aligned}
+\min_{W} \ &  p \cdot w \\
+\mbox{subject to } \ & w_a+ w_b+ w_g \ge \omega \\
+ & aw_a+bw_b+gw_g \le \varepsilon \\
+ & w_a,w_b,w_g \ge 0\\
+\end{aligned}
+$$
+
+## Model setting
+
+- Cost optimization allows for a compensating variation calculatin [@cowell].
+
+- Perfect substitution have important implications:
+
+    - Perfect changes in electricity mix reflects a longer run scenario.
+    
+    - The cost of substitution isn't reflected by the model.
+    
+    - Short-run constraint can be modeled by setting boundaries on the possible solution.
+    
+## Parameterization
+
+- Electricity price from @pln where $p_g \approx p_a \approx 2p_b$
+
+- $\omega$ from @pln, but the share is from @ember.
+
+- Emission factor is calibrated from @febijanto and @jrc.
+
+    - renewable has small factor from procuring solar PV.
+    
+## Scenarios {.s}
+
+| case | description | model setting |
+| --- | ---------- | ------------- |
+| 1 | status quo | restricting the current share of generation. |
+| 2 | current emission, optimized | case 1 without source restriction. |
+| 3 | carbon tax | Same emission limit but with a carbon tax |
+| 4 | CM1 | same prices but a 12.5% emission reduction |
+| 5 | CM2 | same prices but a 15.5% emission reduction |
+| 6 | New RUPTL | case 2 with 52% renewables |
+| 7 | Zero coal | case 2 with 0% coal |
+| 8 | Fully renewable | case 2 with 100% renewables |
+
+## Results {.s}
+
+| case | cost (IDR/KWh) | emission (TCO2) | clean (%) | coal (%) | others (%) |
+| --- | --- | --- | --- | --- | --- |
+| 1 | 906.11 | 225,208,103 | 17 | 60 | 23 |
+| 2 | 819.96 | 225,208,103 | 24.67 | 75.33 | 0 |
+| 3 | 1,071.53 | 225,208,103 | 24.67 | 75.33 | 0 |
+| 4 | 902.63 | 190,277,276 | 38.07 | 61.93 | 0 |
+| 5 | 918.07 | 183,753,484 | 40.58 | 59.42 | 0 |
+| 6 | 988.49 | 153,998,343 | 52 | 48 | 0 |
+| 7 | 1,247.93 | 202,629,399 | 0 | 0 | 100 |
+| 8 | 1,284,44 | 28,947,057 | 100 | 0 | 0 |
+
+## Discussions
+
+- Corner solution toward coal corroborate Indonesia's reliance on coal.
+
+- Case 3: 50% increase in price -> 18.26% total cost, trivial emission reduction.
+
+- Carbon quota (CM1,CM2) increase cost less than carbon tax.
+
+- 0 coal $\rightarrow$ 37.72% extra cost, 100% renewable $\rightarrow$ 41.75%
+
+- Note this does not account for the transition cost.
+
+## Discussions
+
+## Conclusions
+
+## Bibliography {.scrollable .xs}
+
+::: {#refs}
+:::
+
+[^1]: CM1 = Counter Measure 1 (without international support), while CM2 = counter measure 2 (with international support).

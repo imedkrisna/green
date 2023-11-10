@@ -12,7 +12,7 @@ date-format: long
 format:
   html:
     css: styles.css
-    html-math-method: katex
+#    html-math-method: katex
   pdf:
     documentclass: article
 #  docx:
