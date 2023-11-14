@@ -26,25 +26,17 @@ format:
 
 - conclusions
 
----
-
-## About me
-
-- 
-
----
-
 ## Introduction
 
 - Indonesia recent NDCs vow to reduce emissions by 31.9% (CM1) and 43.2% (CM2)[^1] in 2030, net-zero emission (NZE) in 2050.
 
 - From those, energy emission must reduced by 12.5% and 15.5% respectively.
 
-- Requires 3,500 Triliun rupiah to reach those shit
+- Financing will be a challenge, as it requires [3,500 Trilion IDR](https://ebtke.esdm.go.id/post/2020/08/24/2613/turunkan.emisi.314.juta.ton.co2.tahun.2030.indonesia.perlu.investasi.rp.3.500.triliun#:~:text=%22Pemerintah%20telah%20mencanangkan%20target%20penurunan%20emisi%20gas%20rumah,2030%20dengan%20estimasi%20kebutuhan%20investasi%20sebesar%20Rp3.500%20triliun.)
 
-- Financing will be a challenge.
+- According to Ministry of 
 
-   
+
     
 ## Electricity
 
