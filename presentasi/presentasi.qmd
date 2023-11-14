@@ -16,8 +16,31 @@ format:
 
 ---
 
-## Hello!
+## Today
 
+:::: columns
+::: {.column width=40}
+
+![access this slide: s.id/greenpln](qr-greenpln.png)
+
+:::
+::: {.column width=55}
+
+- Krisna 'Imed' Gupta:
+
+    - [imedkrisna.github.io](https://imedkrisna.github.io/)
+    
+    - [\@imedkrisna](https://twitter.com/imedkrisna)
+    
+- Read this paper at 
+
+    - [krisna.or.id](https://www.krisna.or.id/talk/greening-the-grid-and-what-it-takes/)
+    
+    - [Research Gate](https://www.researchgate.net/publication/375632558_The_implication_of_the_aggressive_emission_target_on_the_Indonesian_electricity_sector)
+    
+
+:::
+::::
 
 
 ## Today
