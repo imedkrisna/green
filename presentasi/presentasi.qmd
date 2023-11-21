@@ -252,6 +252,37 @@ $$
 | 7 | Zero coal | case 2 with 0% coal |
 | 8 | Fully renewable | case 2 with 100% renewables |
 
+## Results
+
+```{r}
+library(tidyverse)
+library(scales)
+library(patchwork)
+wew<-tibble(
+  case=1:8,
+  cost=c(906.11,819.96,1071.53,902.63,918.07,988.49,1247.93,1284.44),
+  emission=c(225.208103,225.208103,225.208103,190.277276,183.753484,153.998343,202.629399,28.947057)
+)
+t<-theme_classic() +
+  theme(panel.background = element_rect(fill = "#f0f1eb",
+                                        colour = "#f0f1eb"),
+        plot.background = element_rect(fill = "#f0f1eb"),
+        legend.key = element_rect(fill = "#f0f1eb",linetype = "blank"),
+        legend.background = element_rect(fill="#f0f1eb"))
+a<-ggplot(wew,aes(y=cost,x=case))+geom_bar(stat="identity",fill="skyblue")+scale_y_continuous(labels=comma)+scale_x_continuous(breaks = 1:8)+ t+labs(
+  y = "Cost (IDR/KWh)",
+  title = "difference in cost by case"
+)
+b<-ggplot(wew,aes(y=emission,x=case))+geom_bar(stat="identity",fill="#FF9999")+scale_y_continuous(labels=comma)+scale_x_continuous(breaks = 1:8)+t+labs(
+  y = "Emission (1,000 TCO2)",
+  title = "difference in emission by case"
+)
+
+a|b
+
+
+```
+
 ## Results {.s}
 
 | case | cost (IDR/KWh) | emission (TCO2) | clean (%) | coal (%) | others (%) |
@@ -280,6 +311,8 @@ $$
 ## Discussions {.m}
 
 - Coal is central to cost reduction (and reliability). It may be hard to retire coal.
+
+    - caveat: parameter-sensitive
 
 - Updated parameter is important: can the price of solar go lower in the future?
 
