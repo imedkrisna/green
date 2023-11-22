@@ -272,11 +272,11 @@ t<-theme_classic() +
 a<-ggplot(wew,aes(y=cost,x=case))+geom_bar(stat="identity",fill="skyblue")+scale_y_continuous(labels=comma)+scale_x_continuous(breaks = 1:8)+ t+labs(
   y = "Cost (IDR/KWh)",
   title = "difference in cost by case"
-)
+)+geom_hline(yintercept=906.11,linetype="dashed",color="black",linewidth=1.3)
 b<-ggplot(wew,aes(y=emission,x=case))+geom_bar(stat="identity",fill="#FF9999")+scale_y_continuous(labels=comma)+scale_x_continuous(breaks = 1:8)+t+labs(
   y = "Emission (1,000 TCO2)",
   title = "difference in emission by case"
-)
+)+geom_hline(yintercept=225.208103,linetype="dashed",color="black",linewidth=1.3)
 
 a|b
 
